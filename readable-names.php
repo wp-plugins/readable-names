@@ -3,7 +3,7 @@
 Plugin Name: Readable Names
 Plugin URI: http://wordpress.org/extend/plugins/readable-names/
 Description: The Readable Names plugin forces users to write their names in the language that your blog uses.
-Version: 0.2
+Version: 0.2.1
 Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
