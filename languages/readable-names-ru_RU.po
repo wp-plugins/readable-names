@@ -101,9 +101,9 @@ msgid "http://wordpress.org/extend/plugins/readable-names/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "The Readable Names plugin forces users to write their names in the language "
+msgid "The plugin forces commenters to write their names in the language "
 "that your blog uses."
-msgstr "Плагин «Читаемые имена» заставляет пользователей писать свои имена на языке блога."
+msgstr "Плагин заставляет собеседников писать свои имена на языке блога."
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
