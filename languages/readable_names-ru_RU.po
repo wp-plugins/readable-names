@@ -16,8 +16,8 @@ msgstr "Ошибка: нечитаемое имя"
 
 #: readable-names.php:137
 #, php-format
-msgid "Name &ldquo;%s&rdquo; contains invalid characters."
-msgstr "Имя &laquo;%s&raquo; содержит неверную букву."
+msgid "Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;."
+msgstr "Имя &laquo;%s&raquo; содержит неверную букву &laquo;%s&raquo;."
 
 #: readable-names.php:155
 #, php-format

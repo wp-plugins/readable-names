@@ -16,7 +16,7 @@ msgstr ""
 
 #: readable-names.php:137
 #, php-format
-msgid "Name &ldquo;%s&rdquo; contains invalid characters."
+msgid "Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;."
 msgstr ""
 
 #: readable-names.php:155

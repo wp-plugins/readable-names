@@ -16,8 +16,8 @@ msgstr "Fehler: nicht lesbarer Name"
 
 #: readable-names.php:137
 #, php-format
-msgid "Name &ldquo;%s&rdquo; contains invalid characters."
-msgstr "Der Name &raquo;%s&laquo; enthält falsche Zeichen."
+msgid "Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;."
+msgstr "Der Name &raquo;%s&laquo; enthält ein unzulässiges Zeichen &raquo;%s&laquo;."
 
 #: readable-names.php:155
 #, php-format
@@ -86,7 +86,7 @@ msgstr "Nur ein Großbuchstabe"
 
 #: readable-names.php:303
 msgid "Whitespace is always allowed."
-msgstr "Leerzeichen ist immer erlaubt."
+msgstr "Das Leerzeichen ist immer erlaubt."
 
 #: readable-names.php:351
 msgid "Depending on allowed characters."
@@ -103,7 +103,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid "The plugin forces commenters to write their names in the language "
 "that your blog uses."
-msgstr "Das Plugin zwingt kommentierende Besucher ihre Namen in der Sprache deines Blogs zu schreiben."
+msgstr "Das Plugin erzwingt, dass kommentierende Besucher ihre Namen in der Sprache deines Blogs schreiben."
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
