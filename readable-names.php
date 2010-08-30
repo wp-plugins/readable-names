@@ -2,12 +2,12 @@
 /*
 Plugin Name: Readable Names
 Plugin URI: http://wordpress.org/extend/plugins/readable-names/
-Description: The Readable Names plugin forces users to write their names in the language that your blog uses.
-Version: 0.2.1
+Description: The plugin forces commenters to write their names in the language that your blog uses.
+Version: 0.4.3
 Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
-Text Domain: readable-names
+Text Domain: readable_names
 */
 
 if ( ! function_exists( 'is_admin' ) ) {
@@ -83,7 +83,7 @@ class Readable_Names {
 		
 		$result = $this->check_full_name($comment_author);
 		if ( $result )
-			wp_die( $result, __( 'Error: non readable name' ) . ' | ' . get_bloginfo ( 'name' ), 
+			wp_die( $result, __( 'Error: non readable name', plugin_identifier ) . ' | ' . get_bloginfo ( 'name' ), 
 				array( 'response' => 500, 'back_link' => true ) );
 	}
 
@@ -133,10 +133,18 @@ class Readable_Names {
 		$allowed_characters = 	$this->options_field( 'allowed_small_letters' ) . 
 								$this->options_field( 'allowed_capital_letters' ) .
 								$this->options_field( 'allowed_digits' );
-		if ( $this->strings_compare_count( $allowed_characters, $input ) < $length ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; contains invalid characters.' ), $name );
+								
+		for ( $i = 0; ( $i < $length ) && ( ! $result ); $i++ ) {
+			$letter = mb_substr ( $input, $i, 1 );
+			
+			$position = mb_strpos( $allowed_characters, $letter );
+			
+			if ( false == $position ) {
+				$result = sprintf( __( 'Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;.', plugin_identifier ), $name, $letter );
+			}
+			
 		}
-
+								
 		return $result;
 	}
 	
@@ -152,7 +160,7 @@ class Readable_Names {
 		$result = null;
 		
 		if ( $this->strings_compare_count( 0 == $this->options_field( 'required_letters' ), $name ) ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;.' ), $name, $this->options_field( 'required_letters' ) );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;.', plugin_identifier ), $name, $this->options_field( 'required_letters' ) );
 		}
 
 		return $result;
@@ -170,7 +178,7 @@ class Readable_Names {
 		$length = mb_strlen( $name );
 
 		if ( $length <  $this->options_field( 'minimum_name_length' ) ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.' ), $name, $this->options_field( 'minimum_name_length' ) );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.', plugin_identifier ), $name, $this->options_field( 'minimum_name_length' ) );
 		}
 
 		return $result;
@@ -200,7 +208,7 @@ class Readable_Names {
 
 		$first_letter = mb_substr( $name, 0, 1 );
 		if ( $this->strings_compare_count( $first_letter, $this->options_field( 'allowed_capital_letters' ) ) == 0 ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not begin with a capital letter.' ), $name );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not begin with a capital letter.', plugin_identifier ), $name );
 		}
 		
 		return $result;
@@ -218,7 +226,7 @@ class Readable_Names {
 		$result = null;
 		
 		if ( $this->strings_compare_count( $name, $this->options_field( 'allowed_capital_letters' ) ) > 1 ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; has to many capital letters.' ), $name );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; has to many capital letters.', plugin_identifier ), $name );
 		}
 		
 		return $result;
@@ -421,11 +429,13 @@ class Readable_Names {
 		
 		for ( $i = 0; ( $i < $length ); $i++ ) {
 			$letter = mb_substr ( $s1, $i, 1 );
-			if ( mb_substr_count( $s2, $letter ) > 0 ) {
-				$result++;
+			
+			$count = mb_substr_count( $s2, $letter );
+			
+			if ( $count > 0 ) {
+				$result += $count;
 			}
 		}
-		
 		return $result;
 	}
 	
