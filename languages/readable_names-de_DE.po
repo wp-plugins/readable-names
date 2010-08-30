@@ -90,7 +90,7 @@ msgstr "Leerzeichen ist immer erlaubt."
 
 #: readable-names.php:351
 msgid "Depending on allowed characters."
-msgstr "Hängt von den erlaubten Zeichen ab."
+msgstr "In Abhängigkeit von den erlaubten Zeichen."
 
 #: readable-names.php:362
 msgid "characters"

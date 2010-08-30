@@ -78,7 +78,7 @@ msgstr "Минимальная длина имени"
 
 #: readable-names.php:298
 msgid "First character must be a capital letter"
-msgstr "Первая буква дольна быть заглавной"
+msgstr "Первая буква должна быть заглавной"
 
 #: readable-names.php:299
 msgid "One capital letter only"
@@ -90,7 +90,7 @@ msgstr "Пробел можно ставить всегда."
 
 #: readable-names.php:351
 msgid "Depending on allowed characters."
-msgstr "Зависит от разрешённых знаков."
+msgstr "В зависимости от разрешённых знаков."
 
 #: readable-names.php:362
 msgid "characters"
@@ -103,7 +103,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid "The plugin forces commenters to write their names in the language "
 "that your blog uses."
-msgstr "Плагин заставляет отзывчивых собеседников писать свои имена на языке блога."
+msgstr "Плагин заставляет отзывчивых посетителей писать свои имена на языке твоего блога."
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
