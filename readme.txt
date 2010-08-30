@@ -3,7 +3,7 @@ Contributors: Doktor Bro
 Tags: comments, usability, etiquette
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.3.2
+Stable tag: 0.4
 
 The plugin forces commenters to write their names in the language that your blog uses.
 
@@ -31,6 +31,10 @@ or download through the 'Plugins' menu in WordPress.
 2. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.4 =
+* Add german translation
+* Change the plugin description
 
 = 0.3.2 =
 * Wrong text domain

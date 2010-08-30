@@ -12,89 +12,89 @@ msgstr ""
 
 #: readable-names.php:86
 msgid "Error: non readable name"
-msgstr "Ошибка: нечитаемое имя"
+msgstr "Fehler: nicht lesbarer Name"
 
 #: readable-names.php:137
 #, php-format
 msgid "Name &ldquo;%s&rdquo; contains invalid characters."
-msgstr "Имя &laquo;%s&raquo; содержит неверную букву."
+msgstr "Der Name &raquo;%s&laquo; enthält falsche Zeichen."
 
 #: readable-names.php:155
 #, php-format
 msgid "Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;."
-msgstr "Имя &laquo;%s&raquo; не содержит обязательные буквы &laquo;%s&raquo;."
+msgstr "Der Name &raquo;%s&laquo; enthält nicht die erforderlichen Buchstaben &raquo;%s&laquo;."
 
 #: readable-names.php:173
 #, php-format
 msgid "Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long."
-msgstr "Имя &laquo;%s&raquo; слишком короткое. В нём должно быть как минимум %d знака."
+msgstr "Der Name &raquo;%s&laquo; ist zu kurz. Er sollte mindestens %d Zeichen lang sein."
 
 #: readable-names.php:203
 #, php-format
 msgid "Name &ldquo;%s&rdquo; does not begin with a capital letter."
-msgstr "Имя &laquo;%s&raquo; не начинается с заглавной буквы."
+msgstr "Der Name &raquo;%s&laquo; beginnt nicht mit einem Großbuchstaben."
 
 #: readable-names.php:221
 #, php-format
 msgid "Name &ldquo;%s&rdquo; has to many capital letters."
-msgstr "В имени &laquo;%s&raquo; слишком много заглавных букв."
+msgstr "Der Name &raquo;%s&laquo; enthält zu viele Großbuchstaben."
 
 #: readable-names.php:263
 msgid "Readable Names Options"
-msgstr "Настройка «Читаемых имён»"
+msgstr "Einstellungen für »Lesbare Namen«"
 
 #. Plugin Name of the plugin/theme
 #: readable-names.php:264 readable-names.php:273
 msgid "Readable Names"
-msgstr "Читаемые имена"
+msgstr "Lesbare Namen"
 
 #: readable-names.php:289
 msgid "Allowed characters"
-msgstr "Разрешённые буквы"
+msgstr "Erlaubte Zeichen"
 
 #: readable-names.php:290
 msgid "Small letters"
-msgstr "Прописные буквы"
+msgstr "Kleinbuchstaben"
 
 #: readable-names.php:291
 msgid "Capital letters"
-msgstr "Заглавные буквы"
+msgstr "Großbuchstaben"
 
 #: readable-names.php:292
 msgid "Required letters"
-msgstr "Обязательные буквы"
+msgstr "Erforderliche Buchstaben"
 
 #: readable-names.php:293
 msgid "Digits"
-msgstr "Цифры"
+msgstr "Ziffern"
 
 #: readable-names.php:296
 msgid "Rules"
-msgstr "Правила"
+msgstr "Regeln"
 
 #: readable-names.php:297
 msgid "Minimum name length"
-msgstr "Минимальная длина имени"
+msgstr "Mindestlänge des Namens"
 
 #: readable-names.php:298
 msgid "First character must be a capital letter"
-msgstr "Первая буква дольна быть заглавной"
+msgstr "Der erste Buchstabe muss ein Großbuchstabe sein"
 
 #: readable-names.php:299
 msgid "One capital letter only"
-msgstr "Только одна заглавная буква"
+msgstr "Nur ein Großbuchstabe"
 
 #: readable-names.php:303
 msgid "Whitespace is always allowed."
-msgstr "Пробел можно ставить всегда."
+msgstr "Leerzeichen ist immer erlaubt."
 
 #: readable-names.php:351
 msgid "Depending on allowed characters."
-msgstr "Зависит от разрешённых знаков."
+msgstr "Hängt von den erlaubten Zeichen ab."
 
 #: readable-names.php:362
 msgid "characters"
-msgstr "знаков"
+msgstr "Zeichen"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/readable-names/"
@@ -103,11 +103,11 @@ msgstr ""
 #. Description of the plugin/theme
 msgid "The plugin forces commenters to write their names in the language "
 "that your blog uses."
-msgstr "Плагин заставляет отзывчивых собеседников писать свои имена на языке блога."
+msgstr "Das Plugin zwingt kommentierende Besucher ihre Namen in der Sprache deines Blogs zu schreiben."
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
-msgstr "Анатоль Бродер"
+msgstr "Anatol Broder"
 
 #. Author URI of the plugin/theme
 msgid "http://doktorbro.net/"

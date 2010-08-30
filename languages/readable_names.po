@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Readable Names 0.3\n"
+"Project-Id-Version: Readable Names 0.4\n"
 "Report-Msgid-Bugs-To: bro@doktorbro.net\n"
 "POT-Creation-Date: 2010-08-29 19:22+0000\n"
 "PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
@@ -101,7 +101,7 @@ msgid "http://wordpress.org/extend/plugins/readable-names/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "The Readable Names plugin forces users to write their names in the language "
+msgid "The plugin forces commenters to write their names in the language "
 "that your blog uses."
 msgstr ""
 
