@@ -94,7 +94,7 @@ msgstr "В зависимости от разрешённых знаков."
 
 #: readable-names.php:362
 msgid "characters"
-msgstr "знаков"
+msgstr "знака"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/readable-names/"
