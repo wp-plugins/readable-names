@@ -46,7 +46,7 @@ class Readable_Names {
 	
 	function plugin_activation() {
 		$options = get_option( plugin_identifier );
-		if ( empty( $options ) ) {
+		if ( ! $options ) {
 			$options = $this->options_default();
 		}
 		else {
@@ -458,6 +458,7 @@ class Readable_Names {
 			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
 			$options[ 'required_letters' ] = 'AÄaäEeIiUÜuüYyOÖoö';
 		}
+		
 		// Russian
 		if ( 'ru_RU' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
