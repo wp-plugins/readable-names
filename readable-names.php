@@ -3,7 +3,7 @@
 Plugin Name: Readable Names
 Plugin URI: http://wordpress.org/extend/plugins/readable-names/
 Description: The plugin forces commenters to write their names in the language that your blog uses.
-Version: 0.4.3
+Version: 0.5
 Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
@@ -19,10 +19,6 @@ if ( ! function_exists( 'is_admin' ) ) {
 class Readable_Names {
 
 	function Readable_Names() {
-		// constants
-		define ('plugin_identifier', 'readable_names');
-		define ('plugin_group', plugin_identifier . '_group');
-		
 		// activation, deactivation and uninstall
 		register_activation_hook( __FILE__, array( $this, 'plugin_activation' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'plugin_deactivation' ) );
@@ -37,7 +33,7 @@ class Readable_Names {
 	}
 	
 	function plugin_init() {
-		load_plugin_textdomain( plugin_identifier, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'readable_names', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 		
 		// set internal encoding
 		mb_internal_encoding( get_bloginfo( 'charset' ) );
@@ -45,28 +41,28 @@ class Readable_Names {
 	}
 	
 	function plugin_activation() {
-		$options = get_option( plugin_identifier );
+		$options = get_option( 'readable_names' );
 		if ( ! $options ) {
 			$options = $this->options_default();
 		}
 		else {
-			delete_option( plugin_identifier );
+			delete_option( 'readable_names' );
 		}
-		add_option( plugin_identifier, $options, '', 'yes' );
+		add_option( 'readable_names', $options, '', 'yes' );
 	}
 	
 	function plugin_deactivation() {
-		$options = get_option( plugin_identifier );
-		delete_option( plugin_identifier );
-		add_option( plugin_identifier, $options, '', 'no' );
+		$options = get_option( 'readable_names' );
+		delete_option( 'readable_names' );
+		add_option( 'readable_names', $options, '', 'no' );
 	}
 	
 	function plugin_uninstall() {
-		delete_option( plugin_identifier );
+		delete_option( 'readable_names' );
 	}
 	
 	function options_field( $field ) {
-		$options = get_option( plugin_identifier );
+		$options = get_option( 'readable_names' );
 		if ( isset( $options[ $field ] ) )
 			return @$options[ $field ];
 		else
@@ -83,7 +79,7 @@ class Readable_Names {
 		
 		$result = $this->check_full_name($comment_author);
 		if ( $result )
-			wp_die( $result, __( 'Error: non readable name', plugin_identifier ) . ' | ' . get_bloginfo ( 'name' ), 
+			wp_die( $result, __( 'Error: non readable name', 'readable_names' ) . ' | ' . get_bloginfo ( 'name' ), 
 				array( 'response' => 500, 'back_link' => true ) );
 	}
 
@@ -140,7 +136,7 @@ class Readable_Names {
 			$position = mb_strpos( $allowed_characters, $letter );
 			
 			if ( false == $position ) {
-				$result = sprintf( __( 'Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;.', plugin_identifier ), $name, $letter );
+				$result = sprintf( __( 'Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;.', 'readable_names' ), $name, $letter );
 			}
 			
 		}
@@ -160,7 +156,7 @@ class Readable_Names {
 		$result = null;
 		
 		if ( $this->strings_compare_count( 0 == $this->options_field( 'required_letters' ), $name ) ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;.', plugin_identifier ), $name, $this->options_field( 'required_letters' ) );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;.', 'readable_names' ), $name, $this->options_field( 'required_letters' ) );
 		}
 
 		return $result;
@@ -178,7 +174,7 @@ class Readable_Names {
 		$length = mb_strlen( $name );
 
 		if ( $length <  $this->options_field( 'minimum_name_length' ) ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.', plugin_identifier ), $name, $this->options_field( 'minimum_name_length' ) );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.', 'readable_names' ), $name, $this->options_field( 'minimum_name_length' ) );
 		}
 
 		return $result;
@@ -208,7 +204,7 @@ class Readable_Names {
 
 		$first_letter = mb_substr( $name, 0, 1 );
 		if ( $this->strings_compare_count( $first_letter, $this->options_field( 'allowed_capital_letters' ) ) == 0 ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not begin with a capital letter.', plugin_identifier ), $name );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not begin with a capital letter.', 'readable_names' ), $name );
 		}
 		
 		return $result;
@@ -226,7 +222,7 @@ class Readable_Names {
 		$result = null;
 		
 		if ( $this->strings_compare_count( $name, $this->options_field( 'allowed_capital_letters' ) ) > 1 ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; has to many capital letters.', plugin_identifier ), $name );
+			$result = sprintf( __( 'Name &ldquo;%s&rdquo; has to many capital letters.', 'readable_names' ), $name );
 		}
 		
 		return $result;
@@ -268,20 +264,20 @@ class Readable_Names {
 	
 	function call_add_options_page() {
 		add_options_page(
-		__( 'Readable Names Options', plugin_identifier ),
-		__( 'Readable Names', plugin_identifier ),
+		__( 'Readable Names Options', 'readable_names' ),
+		__( 'Readable Names', 'readable_names' ),
 		'manage_options',
-		plugin_identifier,
+		'readable_names',
 		array( $this, 'show_options_page' ) );
 	}
 	
 	function show_options_page() {?>
 		<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php _e( 'Readable Names', plugin_identifier ); ?></h2>			
+		<h2><?php _e( 'Readable Names', 'readable_names' ); ?></h2>			
 		<form method="post" action="options.php">
-			<?php settings_fields( plugin_group ); ?>
-			<?php do_settings_sections( plugin_identifier ); ?>
+			<?php settings_fields( 'readable_names_group' ); ?>
+			<?php do_settings_sections( 'readable_names' ); ?>
 			<p class="submit">
 				<input type="submit" class="button-primary" name="Submit" value="<?php _e('Save Changes') ?>" />
 			</p>
@@ -291,30 +287,30 @@ class Readable_Names {
 	<?php }
 	
 	function register_settings() {
-		register_setting( plugin_group, plugin_identifier, array( $this, 'options_validate' ) );
+		register_setting( 'readable_names_group', 'readable_names', array( $this, 'options_validate' ) );
 		
 		// section "Allowed characters" with id="section_allowed_characters"
-		add_settings_section( 'section_allowed_characters', __( 'Allowed characters', plugin_identifier ), array( $this, 'admin_section_characters_text' ), plugin_identifier );
-		add_settings_field( 'allowed_small_letters',  __( 'Small letters', plugin_identifier ), array( $this, 'admin_allowed_small_letters' ), plugin_identifier, 'section_allowed_characters' );
-		add_settings_field( 'allowed_capital_letters',  __( 'Capital letters', plugin_identifier ), array( $this, 'admin_allowed_capital_letters' ), plugin_identifier, 'section_allowed_characters' );
-		add_settings_field( 'required_letters',  __( 'Required letters', plugin_identifier ), array( $this, 'admin_required_letters' ), plugin_identifier, 'section_allowed_characters' );
-		add_settings_field( 'allowed_digits',  __( 'Digits', plugin_identifier ), array( $this, 'admin_allowed_digits' ), plugin_identifier, 'section_allowed_characters' );
+		add_settings_section( 'section_allowed_characters', __( 'Allowed characters', 'readable_names' ), array( $this, 'admin_section_characters_text' ), 'readable_names' );
+		add_settings_field( 'allowed_small_letters',  __( 'Small letters', 'readable_names' ), array( $this, 'admin_allowed_small_letters' ), 'readable_names', 'section_allowed_characters' );
+		add_settings_field( 'allowed_capital_letters',  __( 'Capital letters', 'readable_names' ), array( $this, 'admin_allowed_capital_letters' ), 'readable_names', 'section_allowed_characters' );
+		add_settings_field( 'required_letters',  __( 'Required letters', 'readable_names' ), array( $this, 'admin_required_letters' ), 'readable_names', 'section_allowed_characters' );
+		add_settings_field( 'allowed_digits',  __( 'Digits', 'readable_names' ), array( $this, 'admin_allowed_digits' ), 'readable_names', 'section_allowed_characters' );
 		
 		// section "Rules" with id="section_rules"
-		add_settings_section( 'section_rules', __( 'Rules', plugin_identifier ), array( $this, 'admin_section_rules_text' ), plugin_identifier );
-		add_settings_field( 'minimum_name_length',  __( 'Minimum name length', plugin_identifier ), array( $this, 'admin_minimum_name_length' ), plugin_identifier, 'section_rules' );
-		add_settings_field( 'first_letter_capital',  __( 'First character must be a capital letter', plugin_identifier ), array( $this, 'admin_first_letter_capital' ), plugin_identifier, 'section_rules' );
-		add_settings_field( 'one_capital_letter_only',  __( 'One capital letter only', plugin_identifier ), array( $this, 'admin_one_capital_letter_only' ), plugin_identifier, 'section_rules' );
+		add_settings_section( 'section_rules', __( 'Rules', 'readable_names' ), array( $this, 'admin_section_rules_text' ), 'readable_names' );
+		add_settings_field( 'minimum_name_length',  __( 'Minimum name length', 'readable_names' ), array( $this, 'admin_minimum_name_length' ), 'readable_names', 'section_rules' );
+		add_settings_field( 'first_letter_capital',  __( 'First character must be a capital letter', 'readable_names' ), array( $this, 'admin_first_letter_capital' ), 'readable_names', 'section_rules' );
+		add_settings_field( 'one_capital_letter_only',  __( 'One capital letter only', 'readable_names' ), array( $this, 'admin_one_capital_letter_only' ), 'readable_names', 'section_rules' );
 	}
 	
 	function admin_section_characters_text() {
-		echo '<p class="description">' . __( 'Whitespace is always allowed.', plugin_identifier ) . '</p>';
+		echo '<p class="description">' . __( 'Whitespace is always allowed.', 'readable_names' ) . '</p>';
 	}
 	
 	function admin_allowed_small_letters() { ?>
 		<input
 			id="allowed_small_letters"
-			name="<?php echo plugin_identifier; ?>[allowed_small_letters]"
+			name="<?php echo 'readable_names'; ?>[allowed_small_letters]"
 			type="text"
 			class="regular-text"
 			value="<?php echo $this->options_field( 'allowed_small_letters' ) ?>"
@@ -325,7 +321,7 @@ class Readable_Names {
 	function admin_allowed_capital_letters() { ?>
 		<input
 			id="allowed_capital_letters"
-			name="<?php echo plugin_identifier; ?>[allowed_capital_letters]"
+			name="<?php echo 'readable_names'; ?>[allowed_capital_letters]"
 			type="text"
 			class="regular-text"
 			value="<?php echo $this->options_field( 'allowed_capital_letters' ) ?>"
@@ -336,7 +332,7 @@ class Readable_Names {
 	function admin_allowed_digits() { ?>
 		<input
 			id="allowed_digits"
-			name="<?php echo plugin_identifier; ?>[allowed_digits]"
+			name="<?php echo 'readable_names'; ?>[allowed_digits]"
 			type="text"
 			class="regular-text"
 			value="<?php echo $this->options_field( 'allowed_digits' ) ?>"
@@ -347,7 +343,7 @@ class Readable_Names {
 	function admin_required_letters() { ?>
 		<input
 			id="required_letters"
-			name="<?php echo plugin_identifier; ?>[required_letters]"
+			name="<?php echo 'readable_names'; ?>[required_letters]"
 			type="text"
 			class="regular-text"
 			value="<?php echo $this->options_field( 'required_letters' ) ?>"
@@ -356,24 +352,24 @@ class Readable_Names {
 	<?php }
 
 	function admin_section_rules_text() {
-		echo '<p class="description">' . __( 'Depending on allowed characters.', plugin_identifier ) . '</p>';
+		echo '<p class="description">' . __( 'Depending on allowed characters.', 'readable_names' ) . '</p>';
 	}
 
 	function admin_minimum_name_length() { ?>
 		<input
 			id="minimum_name_length"
-			name="<?php echo plugin_identifier; ?>[minimum_name_length]"
+			name="<?php echo 'readable_names'; ?>[minimum_name_length]"
 			type="text"
 			class="small-text"
 			value="<?php echo $this->options_field( 'minimum_name_length' ); ?>"
 		/>
-		<span class="description"><?php _e( 'characters', plugin_identifier ) ?></span>
+		<span class="description"><?php _e( 'characters', 'readable_names' ) ?></span>
 	<?php }
 
 	function admin_first_letter_capital() { ?>
 		<input
 			id="first_letter_capital" 
-			name="<?php echo plugin_identifier; ?>[first_letter_capital]" 
+			name="<?php echo 'readable_names'; ?>[first_letter_capital]" 
 			type="checkbox"
 			value="1" 
 			<?php checked( '1', $this->options_field( 'first_letter_capital' ) ) ?>
@@ -383,7 +379,7 @@ class Readable_Names {
 	function admin_one_capital_letter_only() { ?>
 		<input
 			id="one_capital_letter_only" 
-			name="<?php echo plugin_identifier; ?>[one_capital_letter_only]" 
+			name="<?php echo 'readable_names'; ?>[one_capital_letter_only]" 
 			type="checkbox"
 			value="1" 
 			<?php checked( '1', $this->options_field( 'one_capital_letter_only' ) ) ?>
