@@ -452,6 +452,16 @@ class Readable_Names {
 
 		$locale = get_locale();
 		
+		// Farsi
+		if ( 'fa_IR' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'اآأأبپتثجچحخدذرزژسشصضطظعغفقکكگلمنوؤهةیيئ';
+			$options[ 'allowed_capital_letters' ] = '';
+			$options[ 'required_letters' ] = '';
+			$options[ 'minimum_name_length' ] = 3;
+			$options[ 'first_letter_capital' ] = false;
+			$options[ 'one_capital_letter_only' ] = false;
+		}
+		
 		// German
 		if ( 'de_DE' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
