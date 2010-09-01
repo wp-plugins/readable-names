@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Readable Names v0.4.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2010-08-31 00:41+0000\n"
+"Last-Translator: bownat <sourenaa@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Farsi\n"
+"X-Poedit-Country: IRAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: readable-names.php:86
+#@ readable_names
+msgid "Error: non readable name"
+msgstr "خطا: نام ناخواندنی است"
+
+#: readable-names.php:137
+#, php-format
+#@ readable_names
+msgid "Name &ldquo;%s&rdquo; contains invalid characters."
+msgstr "نام &ldquo;%s&rdquo; حروف غیر قابل قبولی دارد."
+
+#: readable-names.php:155
+#, php-format
+#@ readable_names
+msgid "Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;."
+msgstr "نام &ldquo;%s&rdquo; حروف لازم &ldquo;%s&rdquo; را ندارد."
+
+#: readable-names.php:173
+#, php-format
+#@ readable_names
+msgid "Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long."
+msgstr "نام &ldquo;%s&rdquo; خیلی کوتاه است. اقلا باید %d حرف داشته باشد."
+
+#: readable-names.php:203
+#, php-format
+#@ readable_names
+msgid "Name &ldquo;%s&rdquo; does not begin with a capital letter."
+msgstr "نام &ldquo;%s&rdquo; با حرف یزرگ شروع نمی شود."
+
+#: readable-names.php:221
+#, php-format
+#@ readable_names
+msgid "Name &ldquo;%s&rdquo; has to many capital letters."
+msgstr "نام &ldquo;%s&rdquo; تعداد خارج از اندازه ای حروف بزرگ دارد."
+
+#: readable-names.php:263
+#@ readable_names
+msgid "Readable Names Options"
+msgstr "انتخاب ها برای افزونه ی نام های قابل خواندن"
+
+#: readable-names.php:264
+#: readable-names.php:273
+#@ readable_names
+msgid "Readable Names"
+msgstr "نام های قابل خواندن"
+
+#: readable-names.php:278
+#@ default
+msgid "Save Changes"
+msgstr ""
+
+#: readable-names.php:289
+#@ readable_names
+msgid "Allowed characters"
+msgstr "حروف مجاز"
+
+#: readable-names.php:290
+#@ readable_names
+msgid "Small letters"
+msgstr "حروف کوچک"
+
+#: readable-names.php:291
+#@ readable_names
+msgid "Capital letters"
+msgstr "حروف بزرگ"
+
+#: readable-names.php:292
+#@ readable_names
+msgid "Required letters"
+msgstr "حروف الزامی"
+
+#: readable-names.php:293
+#@ readable_names
+msgid "Digits"
+msgstr "ارقام"
+
+#: readable-names.php:296
+#@ readable_names
+msgid "Rules"
+msgstr "قواعد"
+
+#: readable-names.php:297
+#@ readable_names
+msgid "Minimum name length"
+msgstr "حداقل طول نام"
+
+#: readable-names.php:298
+#@ readable_names
+msgid "First character must be a capital letter"
+msgstr "حروف آغازین باید بزرگ باشند"
+
+#: readable-names.php:299
+#@ readable_names
+msgid "One capital letter only"
+msgstr "تنها یک حرف بزرگ"
+
+#: readable-names.php:303
+#@ readable_names
+msgid "Whitespace is always allowed."
+msgstr "Whitespace همیشه مجاز است"
+
+#: readable-names.php:351
+#@ readable_names
+msgid "Depending on allowed characters."
+msgstr "بنا به حروف مجاز."
+
+#: readable-names.php:362
+#@ readable_names
+msgid "characters"
+msgstr "حروف"
+
