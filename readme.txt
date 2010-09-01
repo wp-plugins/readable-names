@@ -3,7 +3,7 @@ Contributors: Doktor Bro
 Tags: comments, usability, etiquette
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.4.3
+Stable tag: 0.5
 
 The plugin forces commenters to write their names in the language that your blog uses.
 
@@ -13,6 +13,7 @@ The plugin forces commenters to write their names in the language that your blog
 
 = Predefined languages =
 * English
+* Farsi (by [Alefba](http://alefba.us/))
 * German
 * Russian
 
@@ -31,6 +32,10 @@ or download through the 'Plugins' menu in WordPress.
 2. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.5 =
+* Add Farsi support
+* Change plugin activation
 
 = 0.4.3 =
 * Wrong check for allowed characters
