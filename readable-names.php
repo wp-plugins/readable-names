@@ -3,7 +3,7 @@
 Plugin Name: Readable Names
 Plugin URI: http://wordpress.org/extend/plugins/readable-names/
 Description: The plugin forces commenters to write their names in the language that your blog uses.
-Version: 0.5
+Version: 0.5.1
 Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
@@ -34,10 +34,6 @@ class Readable_Names {
 	
 	function plugin_init() {
 		load_plugin_textdomain( 'readable_names', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-		
-		// set internal encoding
-		mb_internal_encoding( get_bloginfo( 'charset' ) );
-		mb_regex_encoding( get_bloginfo( 'charset' ) );
 	}
 	
 	function plugin_activation() {
@@ -125,15 +121,15 @@ class Readable_Names {
 		
 		$result = null;
 
-		$length = mb_strlen( $input );
+		$length = mb_strlen( $input, 'UTF-8' );
 		$allowed_characters = 	$this->options_field( 'allowed_small_letters' ) . 
 								$this->options_field( 'allowed_capital_letters' ) .
 								$this->options_field( 'allowed_digits' );
 								
 		for ( $i = 0; ( $i < $length ) && ( ! $result ); $i++ ) {
-			$letter = mb_substr ( $input, $i, 1 );
+			$letter = mb_substr ( $input, $i, 1, 'UTF-8' );
 			
-			$position = mb_strpos( $allowed_characters, $letter );
+			$position = mb_strpos( $allowed_characters, $letter, 0, 'UTF-8' );
 			
 			if ( false == $position ) {
 				$result = sprintf( __( 'Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;.', 'readable_names' ), $name, $letter );
@@ -171,7 +167,7 @@ class Readable_Names {
 			return;
 		
 		$result = null;
-		$length = mb_strlen( $name );
+		$length = mb_strlen( $name, 'UTF-8' );
 
 		if ( $length <  $this->options_field( 'minimum_name_length' ) ) {
 			$result = sprintf( __( 'Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.', 'readable_names' ), $name, $this->options_field( 'minimum_name_length' ) );
@@ -202,7 +198,7 @@ class Readable_Names {
 		
 		$result = null;
 
-		$first_letter = mb_substr( $name, 0, 1 );
+		$first_letter = mb_substr( $name, 0, 1, 'UTF-8' );
 		if ( $this->strings_compare_count( $first_letter, $this->options_field( 'allowed_capital_letters' ) ) == 0 ) {
 			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not begin with a capital letter.', 'readable_names' ), $name );
 		}
@@ -315,7 +311,7 @@ class Readable_Names {
 			class="regular-text"
 			value="<?php echo $this->options_field( 'allowed_small_letters' ) ?>"
 		/>
-		<span class="description">(<?php echo mb_strlen( $this->options_field( 'allowed_small_letters' ) ) ?>)</span>
+		<span class="description">(<?php echo mb_strlen( $this->options_field( 'allowed_small_letters' ), 'UTF-8' ) ?>)</span>
 	<?php }
 	
 	function admin_allowed_capital_letters() { ?>
@@ -326,7 +322,7 @@ class Readable_Names {
 			class="regular-text"
 			value="<?php echo $this->options_field( 'allowed_capital_letters' ) ?>"
 		/>
-		<span class="description">(<?php echo mb_strlen( $this->options_field( 'allowed_capital_letters' ) ) ?>)</span>
+		<span class="description">(<?php echo mb_strlen( $this->options_field( 'allowed_capital_letters' ), 'UTF-8' ) ?>)</span>
 	<?php }
 	
 	function admin_allowed_digits() { ?>
@@ -337,7 +333,7 @@ class Readable_Names {
 			class="regular-text"
 			value="<?php echo $this->options_field( 'allowed_digits' ) ?>"
 		/>
-		<span class="description">(<?php echo mb_strlen( $this->options_field( 'allowed_digits' ) ) ?>)</span>
+		<span class="description">(<?php echo mb_strlen( $this->options_field( 'allowed_digits' ), 'UTF-8' ) ?>)</span>
 	<?php }
 	
 	function admin_required_letters() { ?>
@@ -348,7 +344,7 @@ class Readable_Names {
 			class="regular-text"
 			value="<?php echo $this->options_field( 'required_letters' ) ?>"
 		/>
-		<span class="description">(<?php echo mb_strlen( $this->options_field( 'required_letters' ) ); ?>)</span>
+		<span class="description">(<?php echo mb_strlen( $this->options_field( 'required_letters' ), 'UTF-8' ); ?>)</span>
 	<?php }
 
 	function admin_section_rules_text() {
@@ -403,10 +399,10 @@ class Readable_Names {
 		$input = preg_replace( '/\s+/', '', $input );
 
 		// sort
-		$length = mb_strlen( $input );
+		$length = mb_strlen( $input, 'UTF-8' );
 		$letters = array();
 		for ($i = 0; ( $i < $length ); $i++) {
-			$letters[] = mb_substr ( $input, $i, 1 );
+			$letters[] = mb_substr ( $input, $i, 1, 'UTF-8' );
 		}
 		sort ( $letters );
 
@@ -421,12 +417,12 @@ class Readable_Names {
 	function strings_compare_count( $s1, $s2 ) {
 		$result = 0;
 		
-		$length = mb_strlen( $s1 );		
+		$length = mb_strlen( $s1, 'UTF-8' );		
 		
 		for ( $i = 0; ( $i < $length ); $i++ ) {
-			$letter = mb_substr ( $s1, $i, 1 );
+			$letter = mb_substr ( $s1, $i, 1, 'UTF-8' );
 			
-			$count = mb_substr_count( $s2, $letter );
+			$count = mb_substr_count( $s2, $letter, 'UTF-8' );
 			
 			if ( $count > 0 ) {
 				$result += $count;
