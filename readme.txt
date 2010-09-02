@@ -13,8 +13,8 @@ The plugin forces commenters to write their names in the language that your blog
 
 = Predefined languages =
 * English
-* Farsi (by [Alefba](http://alefba.us/))
 * German
+* Persian (by [Alefba](http://alefba.us/))
 * Russian
 
 == Installation ==

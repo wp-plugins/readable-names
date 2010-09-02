@@ -444,7 +444,7 @@ class Readable_Names {
 
 		$locale = get_locale();
 		
-		// Farsi
+		// Persian
 		if ( 'fa_IR' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'اآأأبپتثجچحخدذرزژسشصضطظعغفقکكگلمنوؤهةیيئ';
 			$options[ 'allowed_capital_letters' ] = '';
