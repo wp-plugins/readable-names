@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Readable Names 0.2.1\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
+"Project-Id-Version: Readable Names 0.4\n"
+"Report-Msgid-Bugs-To: bro@doktorbro.net\n"
 "POT-Creation-Date: 2010-08-29 19:22+0000\n"
 "PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Anatol Broder <bro@doktorbro.net>\n"
@@ -12,11 +12,11 @@ msgstr ""
 
 #: readable-names.php:86
 msgid "Error: non readable name"
-msgstr "Ошибка: нечитаемое имя"
+msgstr ""
 
 #: readable-names.php:137
 #, php-format
-msgid "Name &ldquo;%s&rdquo; contains invalid characters."
+msgid "Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;."
 msgstr ""
 
 #: readable-names.php:155
@@ -43,14 +43,9 @@ msgstr ""
 msgid "Readable Names Options"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (Readable Names 0.2.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: readable-names.php:264 readable-names.php:273
 msgid "Readable Names"
-msgstr ""
-
-#: readable-names.php:278
-msgid "Save Changes"
 msgstr ""
 
 #: readable-names.php:289
@@ -106,13 +101,13 @@ msgid "http://wordpress.org/extend/plugins/readable-names/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "The Readable Names plugin forces users to write their names in the language "
+msgid "The plugin forces commenters to write their names in the language "
 "that your blog uses."
 msgstr ""
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
-msgstr "Анатоль Бродер"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://doktorbro.net/"
