@@ -391,7 +391,9 @@ class Readable_Names {
 		$valid_options[ 'allowed_capital_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_capital_letters' ] );
 		$valid_options[ 'required_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'required_letters' ] );		
 		$valid_options[ 'allowed_digits' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_digits' ] );
-		$valid_options[ 'minimum_name_length' ] = max( 1, absint( $valid_options[ 'minimum_name_length' ] ) );
+		// minimum name length must be between 1 and 3
+		$valid_options[ 'minimum_name_length' ] = absint( $valid_options[ 'minimum_name_length' ] );
+		$valid_options[ 'minimum_name_length' ] = max( 1, min( 3, $valid_options[ 'minimum_name_length' ] ) );
 		
 		return $valid_options;
 	}
