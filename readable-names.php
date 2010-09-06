@@ -30,6 +30,7 @@ class Readable_Names {
 		add_action( 'user_profile_update_errors', array( $this, 'check_user_profile' ), 1, 3 );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'call_add_options_page' ) );
+		add_filter( 'plugin_action_links', array( $this, 'init_action_links' ), 10, 2 );
 	}
 	
 	function plugin_init() {
@@ -275,7 +276,7 @@ class Readable_Names {
 			<?php settings_fields( 'readable_names_group' ); ?>
 			<?php do_settings_sections( 'readable_names' ); ?>
 			<p class="submit">
-				<input type="submit" class="button-primary" name="Submit" value="<?php _e('Save Changes') ?>" />
+				<input type="submit" class="button-primary" name="Submit" value="<?php _e( 'Save Changes' ) ?>" />
 			</p>
 		</form>
 		</div>
@@ -469,6 +470,16 @@ class Readable_Names {
 		}
 		
 		return $options;
+	}
+	
+	function init_action_links( $links, $file ) {
+		if ( plugin_basename( __FILE__ ) == $file ) {
+			return array_merge(
+				array( sprintf( '<a href="options-general.php?page=readable_names">%s</a>' , __( 'Settings' ) ) ),
+				$links
+			);
+		}
+		return $links;
 	}
 	
 }	
