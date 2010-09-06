@@ -391,14 +391,18 @@ class Readable_Names {
 		$valid_options[ 'allowed_capital_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_capital_letters' ] );
 		$valid_options[ 'required_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'required_letters' ] );		
 		$valid_options[ 'allowed_digits' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_digits' ] );
+		$valid_options[ 'minimum_name_length' ] = max( 1, absint( $valid_options[ 'minimum_name_length' ] ) );
 		
 		return $valid_options;
 	}
 	
 	function admin_validate_input_letters( $input ) {
+		// wordpress sanitize for names
+		$input = sanitize_text_field( $input );
+		
 		// eliminate whitespace
 		$input = preg_replace( '/\s+/', '', $input );
-
+		
 		// sort
 		$length = mb_strlen( $input, 'UTF-8' );
 		$letters = array();
