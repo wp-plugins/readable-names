@@ -17,6 +17,9 @@ The plugin forces commenters to write their names in the language that your blog
 * Persian (by [Alefba](http://alefba.us/))
 * Russian
 
+= Support =
+Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored. The only supported location for support questions is [http://wordpress.org/tags/readable-names](http://wordpress.org/tags/readable-names).
+
 == Installation ==
 
 1. Upload the `readable-names` folder to the `/wp-content/plugins/` directory
