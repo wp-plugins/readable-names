@@ -1,6 +1,6 @@
 === Readable Names ===
-Contributors: Doktor Bro
-Tags: comments, usability, etiquette
+Contributors: doktor-bro
+Tags: comments, usability, etiquette, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
 Stable tag: 0.5.1
