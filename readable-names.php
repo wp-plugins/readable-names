@@ -298,6 +298,10 @@ class Readable_Names {
 		add_settings_field( 'minimum_name_length',  __( 'Minimum name length', 'readable_names' ), array( $this, 'admin_minimum_name_length' ), 'readable_names', 'section_rules' );
 		add_settings_field( 'first_letter_capital',  __( 'First character must be a capital letter', 'readable_names' ), array( $this, 'admin_first_letter_capital' ), 'readable_names', 'section_rules' );
 		add_settings_field( 'one_capital_letter_only',  __( 'One capital letter only', 'readable_names' ), array( $this, 'admin_one_capital_letter_only' ), 'readable_names', 'section_rules' );
+		
+		// section "Affected users" with id="section_affected_users"
+		add_settings_section( 'section_affected_users', __( 'Affected users', 'readable_names' ), array( $this, 'admin_section_affected_users_text' ), 'readable_names' );
+		add_settings_field( 'check_visitor',  __( 'Visitor', 'readable_names' ), array( $this, 'admin_check_visitor' ), 'readable_names', 'section_affected_users' );
 	}
 	
 	function admin_section_characters_text() {
@@ -382,7 +386,21 @@ class Readable_Names {
 			<?php checked( '1', $this->options_field( 'one_capital_letter_only' ) ) ?>
 		/>
 	<?php }
+	
+	function admin_section_affected_users_text() {
+		echo '<p class="description">' . __( 'Depending on discussion settings.', 'readable_names' ) . '</p>';
+	}
 
+	function admin_check_visitor() { ?>
+		<input
+			id="check_visitor" 
+			name="<?php echo 'readable_names'; ?>[check_visitor]" 
+			type="checkbox"
+			value="1" 
+			<?php checked( '1', $this->options_field( 'check_visitor' ) ) ?>
+		/>
+	<?php }
+	
 	function options_validate($options) {
 		$valid_options = $options;
 
@@ -447,7 +465,9 @@ class Readable_Names {
 			'required_letters' => 'AaEeIiUuYyOo',
 			'minimum_name_length' => 2,
 			'first_letter_capital' => true,
-			'one_capital_letter_only' => true );
+			'one_capital_letter_only' => true,
+			'check_visitor' => true
+		);
 
 		$locale = get_locale();
 		
