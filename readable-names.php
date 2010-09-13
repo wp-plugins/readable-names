@@ -43,8 +43,9 @@ class Readable_Names {
 			$options = $this->options_default();
 		}
 		else {
-			delete_option( 'readable_names' );
+			$options = $this->options_upgrade( $options );
 		}
+		delete_option( 'readable_names' );
 		add_option( 'readable_names', $options, '', 'yes' );
 	}
 	
@@ -56,6 +57,12 @@ class Readable_Names {
 	
 	function plugin_uninstall() {
 		delete_option( 'readable_names' );
+	}
+	
+	function options_upgrade( $options_old ) {
+		$options_default = $this->options_default();
+		$options_old_usable = array_intersect_key( $options_old, $options_default );
+		return array_merge( $options_default, $options_old_usable );
 	}
 	
 	function options_field( $field ) {
@@ -292,16 +299,17 @@ class Readable_Names {
 		add_settings_field( 'allowed_capital_letters',  __( 'Capital letters', 'readable_names' ), array( $this, 'admin_allowed_capital_letters' ), 'readable_names', 'section_allowed_characters' );
 		add_settings_field( 'allowed_digits',  __( 'Digits', 'readable_names' ), array( $this, 'admin_allowed_digits' ), 'readable_names', 'section_allowed_characters' );
 		
-		// section "Rules" with id="section_rules"
-		add_settings_section( 'section_rules', __( 'Rules', 'readable_names' ), array( $this, 'admin_section_rules_text' ), 'readable_names' );
-		add_settings_field( 'required_letters',  __( 'Required letters', 'readable_names' ), array( $this, 'admin_required_letters' ), 'readable_names', 'section_rules' );
-		add_settings_field( 'minimum_name_length',  __( 'Minimum name length', 'readable_names' ), array( $this, 'admin_minimum_name_length' ), 'readable_names', 'section_rules' );
-		add_settings_field( 'first_letter_capital',  __( 'First character must be a capital letter', 'readable_names' ), array( $this, 'admin_first_letter_capital' ), 'readable_names', 'section_rules' );
-		add_settings_field( 'one_capital_letter_only',  __( 'One capital letter only', 'readable_names' ), array( $this, 'admin_one_capital_letter_only' ), 'readable_names', 'section_rules' );
+		// section "Grammar" with id="section_grammar"
+		add_settings_section( 'section_grammar', __( 'Grammar', 'readable_names' ), array( $this, 'admin_section_grammar_text' ), 'readable_names' );
+		add_settings_field( 'required_letters',  __( 'Required letters', 'readable_names' ), array( $this, 'admin_required_letters' ), 'readable_names', 'section_grammar' );
+		add_settings_field( 'minimum_name_length',  __( 'Minimum name length', 'readable_names' ), array( $this, 'admin_minimum_name_length' ), 'readable_names', 'section_grammar' );
+		add_settings_field( 'first_letter_capital',  __( 'First character must be a capital letter', 'readable_names' ), array( $this, 'admin_first_letter_capital' ), 'readable_names', 'section_grammar' );
+		add_settings_field( 'one_capital_letter_only',  __( 'One capital letter only', 'readable_names' ), array( $this, 'admin_one_capital_letter_only' ), 'readable_names', 'section_grammar' );
 		
-		// section "Affected users" with id="section_affected_users"
-		add_settings_section( 'section_affected_users', __( 'Affected users', 'readable_names' ), array( $this, 'admin_section_affected_users_text' ), 'readable_names' );
-		add_settings_field( 'check_visitor',  __( 'Visitor', 'readable_names' ), array( $this, 'admin_check_visitor' ), 'readable_names', 'section_affected_users' );
+		// section "Affected roles" with id="section_affected_roles"
+		add_settings_section( 'section_affected_roles', __( 'Affected roles', 'readable_names' ), array( $this, 'admin_section_affected_roles_text' ), 'readable_names' );
+		add_settings_field( 'check_visitor',  __( 'Visitor', 'readable_names' ), array( $this, 'admin_check_visitor' ), 'readable_names', 'section_affected_roles' );
+		add_settings_field( 'check_user',  __( 'User', 'readable_names' ), array( $this, 'admin_check_user' ), 'readable_names', 'section_affected_roles' );
 	}
 	
 	function admin_section_characters_text() {
@@ -352,7 +360,7 @@ class Readable_Names {
 		<span class="description">(<?php echo mb_strlen( $this->options_field( 'required_letters' ), 'UTF-8' ); ?>)</span>
 	<?php }
 
-	function admin_section_rules_text() {
+	function admin_section_grammar_text() {
 		echo '<p class="description">' . __( 'Depending on allowed characters.', 'readable_names' ) . '</p>';
 	}
 
@@ -387,7 +395,7 @@ class Readable_Names {
 		/>
 	<?php }
 	
-	function admin_section_affected_users_text() {
+	function admin_section_affected_roles_text() {
 		echo '<p class="description">' . __( 'Depending on discussion settings.', 'readable_names' ) . '</p>';
 	}
 
@@ -401,6 +409,16 @@ class Readable_Names {
 		/>
 	<?php }
 	
+	function admin_check_user() { ?>
+		<input
+			id="check_user" 
+			name="<?php echo 'readable_names'; ?>[check_user]" 
+			type="checkbox"
+			value="1" 
+			<?php checked( '1', $this->options_field( 'check_user' ) ) ?>
+		/>
+	<?php }
+	
 	function options_validate($options) {
 		$valid_options = $options;
 
@@ -409,6 +427,7 @@ class Readable_Names {
 		$valid_options[ 'allowed_capital_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_capital_letters' ] );
 		$valid_options[ 'required_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'required_letters' ] );		
 		$valid_options[ 'allowed_digits' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_digits' ] );
+		
 		// minimum name length must be between 1 and 3
 		$valid_options[ 'minimum_name_length' ] = absint( $valid_options[ 'minimum_name_length' ] );
 		$valid_options[ 'minimum_name_length' ] = max( 1, min( 3, $valid_options[ 'minimum_name_length' ] ) );
@@ -466,7 +485,8 @@ class Readable_Names {
 			'minimum_name_length' => 2,
 			'first_letter_capital' => true,
 			'one_capital_letter_only' => true,
-			'check_visitor' => true
+			'check_visitor' => true,
+			'check_user' => true
 		);
 
 		$locale = get_locale();
