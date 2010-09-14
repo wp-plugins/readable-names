@@ -74,20 +74,23 @@ class Readable_Names {
 	}
 	
 	function check_comment_author($comment_post_ID) {
+		if ( ( ! $this->options_field( 'check_visitor' ) ) && ( ! is_user_logged_in() ) )
+			return;
+		
 		$result = null;
 		
-		$comment_author = ( isset($_POST['author']) ) ? trim(strip_tags($_POST['author'])) : null;
+		$comment_author = ( isset( $_POST[ 'author' ] ) ) ? trim( strip_tags( $_POST[ 'author' ] ) ) : null;
 	
 		if ( empty( $comment_author ) ) 
 			return;
 		
-		$result = $this->check_full_name($comment_author);
+		$result = $this->check_full_name( $comment_author );
 		if ( $result )
 			wp_die( $result, __( 'Error: non readable name', 'readable_names' ) . ' | ' . get_bloginfo ( 'name' ), 
 				array( 'response' => 500, 'back_link' => true ) );
 	}
 
-	function check_full_name($full_name) {
+	function check_full_name( $full_name ) {
 		if ( empty( $full_name ) )
 			return;
 		
@@ -233,35 +236,30 @@ class Readable_Names {
 	}
 	
 	function check_user_profile( $errors, $update, $user ) {
+		if ( ! $this->options_field( 'check_user' ) )
+			return;
+		
 		// don't check the user with 'edit_users' capability
-		if ( current_user_can('edit_users') )
+		if ( current_user_can( 'edit_users' ) )
 			return;
 		
 		// first name
-		$result = null;
-		if ( ! empty( $user->first_name ) )
-			$result = $this->check_full_name( $user->first_name );
+		$result = ( $user->first_name ) ? $this->check_full_name( $user->first_name ) : null;
 		if ( $result )
 			$errors->add( 'first_name', $result, array( 'form-field' => 'first_name' ) );
 		
 		// last name
-		$result = null;
-		if ( ! empty( $user->last_name ) )
-			$result = $this->check_full_name( $user->last_name );
+		$result = ( $user->last_name ) ? $this->check_full_name( $user->last_name ) : null;
 		if ( $result )
 			$errors->add( 'last_name', $result, array( 'form-field' => 'last_name' ) );	
 		
 		// nickname
-		$result = null;
-		if ( ! empty( $user->nickname ) )
-			$result = $this->check_full_name( $user->nickname );
+		$result = ( $user->nickname ) ? $this->check_full_name( $user->nickname ) : null;
 		if ( $result )
 			$errors->add( 'nickname', $result, array( 'form-field' => 'nickname' ) );	
 
 		// display name
-		$result = null;
-		if ( ! empty( $user->display_name ) )
-			$result = $this->check_full_name( $user->display_name );
+		$result = ( $user->display_name ) ? $this->check_full_name( $user->display_name ) : null;
 		if ( $result )
 			$errors->add( 'display_name', $result, array( 'form-field' => 'display_name' ) );
 	}
@@ -396,7 +394,7 @@ class Readable_Names {
 	<?php }
 	
 	function admin_section_affected_roles_text() {
-		echo '<p class="description">' . __( 'Depending on discussion settings.', 'readable_names' ) . '</p>';
+		echo '<p class="description">' . sprintf( __( 'Depending on <a href="%s">discussion settings</a>.', 'readable_names' ), admin_url( 'options-discussion.php' ) ) . '</p>';
 	}
 
 	function admin_check_visitor() { ?>
@@ -521,7 +519,7 @@ class Readable_Names {
 	function init_action_links( $links, $file ) {
 		if ( plugin_basename( __FILE__ ) == $file ) {
 			return array_merge(
-				array( sprintf( '<a href="options-general.php?page=readable_names">%s</a>' , __( 'Settings' ) ) ),
+				array( sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=readable_names' ), __( 'Settings' ) ) ),
 				$links
 			);
 		}
