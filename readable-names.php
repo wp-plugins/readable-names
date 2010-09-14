@@ -86,7 +86,7 @@ class Readable_Names {
 		
 		$result = $this->check_full_name( $comment_author );
 		if ( $result )
-			wp_die( $result, __( 'Error: non readable name', 'readable_names' ) . ' | ' . get_bloginfo ( 'name' ), 
+			wp_die( $result, __( 'Error: Non readable name', 'readable_names' ) . ' | ' . get_bloginfo ( 'name' ), 
 				array( 'response' => 500, 'back_link' => true ) );
 	}
 
@@ -111,9 +111,6 @@ class Readable_Names {
 			if ( ! $result )
 				$result = $this->check_name_length( $name );
 
-			if ( ! $result )
-				$result = $this->check_required_letters( $name );			
-			
 			if ( ! $result )
 				$result = $this->check_first_letter_capital( $name );
 			
@@ -143,29 +140,10 @@ class Readable_Names {
 			$position = mb_strpos( $allowed_characters, $letter, 0, 'UTF-8' );
 			
 			if ( false == $position ) {
-				$result = sprintf( __( 'Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;.', 'readable_names' ), $name, $letter );
+				$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%1$s&rdquo; contains an invalid character: &ldquo;%2$s&rdquo;. Please only use these characters: &ldquo;%3$s&rdquo;.', 'readable_names' ), $name, $letter, $allowed_characters );
 			}
-			
 		}
 								
-		return $result;
-	}
-	
-	function check_required_letters( $name ) {
-		if ( ! $this->options_field( 'required_letters' ) ) {
-			return;
-		}
-		
-		if ( $this->name_is_number( $name ) ) {
-			return;
-		}
-
-		$result = null;
-		
-		if ( $this->strings_compare_count( 0 == $this->options_field( 'required_letters' ), $name ) ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;.', 'readable_names' ), $name, $this->options_field( 'required_letters' ) );
-		}
-
 		return $result;
 	}
 	
@@ -181,7 +159,7 @@ class Readable_Names {
 		$length = mb_strlen( $name, 'UTF-8' );
 
 		if ( $length <  $this->options_field( 'minimum_name_length' ) ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.', 'readable_names' ), $name, $this->options_field( 'minimum_name_length' ) );
+			$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.', 'readable_names' ), $name, $this->options_field( 'minimum_name_length' ) );
 		}
 
 		return $result;
@@ -211,7 +189,7 @@ class Readable_Names {
 
 		$first_letter = mb_substr( $name, 0, 1, 'UTF-8' );
 		if ( $this->strings_compare_count( $first_letter, $this->options_field( 'allowed_capital_letters' ) ) == 0 ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; does not begin with a capital letter.', 'readable_names' ), $name );
+			$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%s&rdquo; does not begin with a capital letter.', 'readable_names' ), $name );
 		}
 		
 		return $result;
@@ -229,7 +207,7 @@ class Readable_Names {
 		$result = null;
 		
 		if ( $this->strings_compare_count( $name, $this->options_field( 'allowed_capital_letters' ) ) > 1 ) {
-			$result = sprintf( __( 'Name &ldquo;%s&rdquo; has to many capital letters.', 'readable_names' ), $name );
+			$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%s&rdquo; has to many capital letters.', 'readable_names' ), $name );
 		}
 		
 		return $result;
@@ -299,7 +277,6 @@ class Readable_Names {
 		
 		// section "Grammar" with id="section_grammar"
 		add_settings_section( 'section_grammar', __( 'Grammar', 'readable_names' ), array( $this, 'admin_section_grammar_text' ), 'readable_names' );
-		add_settings_field( 'required_letters',  __( 'Required letters', 'readable_names' ), array( $this, 'admin_required_letters' ), 'readable_names', 'section_grammar' );
 		add_settings_field( 'minimum_name_length',  __( 'Minimum name length', 'readable_names' ), array( $this, 'admin_minimum_name_length' ), 'readable_names', 'section_grammar' );
 		add_settings_field( 'first_letter_capital',  __( 'First character must be a capital letter', 'readable_names' ), array( $this, 'admin_first_letter_capital' ), 'readable_names', 'section_grammar' );
 		add_settings_field( 'one_capital_letter_only',  __( 'One capital letter only', 'readable_names' ), array( $this, 'admin_one_capital_letter_only' ), 'readable_names', 'section_grammar' );
@@ -345,17 +322,6 @@ class Readable_Names {
 			value="<?php echo $this->options_field( 'allowed_digits' ) ?>"
 		/>
 		<span class="description">(<?php echo mb_strlen( $this->options_field( 'allowed_digits' ), 'UTF-8' ) ?>)</span>
-	<?php }
-	
-	function admin_required_letters() { ?>
-		<input
-			id="required_letters"
-			name="<?php echo 'readable_names'; ?>[required_letters]"
-			type="text"
-			class="regular-text"
-			value="<?php echo $this->options_field( 'required_letters' ) ?>"
-		/>
-		<span class="description">(<?php echo mb_strlen( $this->options_field( 'required_letters' ), 'UTF-8' ); ?>)</span>
 	<?php }
 
 	function admin_section_grammar_text() {
@@ -423,7 +389,6 @@ class Readable_Names {
 		// validate allowed characters
 		$valid_options[ 'allowed_small_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_small_letters' ] );
 		$valid_options[ 'allowed_capital_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_capital_letters' ] );
-		$valid_options[ 'required_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'required_letters' ] );		
 		$valid_options[ 'allowed_digits' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_digits' ] );
 		
 		// minimum name length must be between 1 and 3
@@ -479,7 +444,6 @@ class Readable_Names {
 			'allowed_small_letters' => 'abcdefghijklmnopqrstuvwxyz',
 			'allowed_capital_letters' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			'allowed_digits' => '',
-			'required_letters' => 'AaEeIiUuYyOo',
 			'minimum_name_length' => 2,
 			'first_letter_capital' => true,
 			'one_capital_letter_only' => true,
@@ -493,7 +457,6 @@ class Readable_Names {
 		if ( 'fa_IR' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'اآأأبپتثجچحخدذرزژسشصضطظعغفقکكگلمنوؤهةیيئ';
 			$options[ 'allowed_capital_letters' ] = '';
-			$options[ 'required_letters' ] = '';
 			$options[ 'minimum_name_length' ] = 3;
 			$options[ 'first_letter_capital' ] = false;
 			$options[ 'one_capital_letter_only' ] = false;
@@ -503,14 +466,12 @@ class Readable_Names {
 		if ( 'de_DE' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
 			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
-			$options[ 'required_letters' ] = 'AÄaäEeIiUÜuüYyOÖoö';
 		}
 		
 		// Russian
 		if ( 'ru_RU' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 			$options[ 'allowed_capital_letters' ] = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-			$options[ 'required_letters' ] = 'АаЕеЁёИиОоУуЫыЭэЮюЯя';
 		}
 		
 		return $options;
