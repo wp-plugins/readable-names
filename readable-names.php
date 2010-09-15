@@ -244,7 +244,7 @@ class Readable_Names {
 	
 	function call_add_options_page() {
 		add_options_page(
-		__( 'Readable Names Options', 'readable_names' ),
+		__( 'Readable Names Settings', 'readable_names' ),
 		__( 'Readable Names', 'readable_names' ),
 		'manage_options',
 		'readable_names',
@@ -254,7 +254,7 @@ class Readable_Names {
 	function show_options_page() {?>
 		<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php _e( 'Readable Names', 'readable_names' ); ?></h2>			
+		<h2><?php _e( 'Readable Names Settings', 'readable_names' ); ?></h2>			
 		<form method="post" action="options.php">
 			<?php settings_fields( 'readable_names_group' ); ?>
 			<?php do_settings_sections( 'readable_names' ); ?>
