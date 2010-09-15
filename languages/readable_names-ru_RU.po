@@ -1,109 +1,133 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Readable Names 0.4\n"
-"Report-Msgid-Bugs-To: bro@doktorbro.net\n"
-"POT-Creation-Date: 2010-08-29 19:22+0000\n"
-"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: Readable Names 0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
+"POT-Creation-Date: 2010-09-15 23:29+0000\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Anatol Broder <bro@doktorbro.net>\n"
 "Language-Team: Anatol Broder <bro@doktorbro.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2);\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: /home/svn/readable-names/trunk\n"
+"X-Poedit-SearchPath-0: /home/svn/readable-names/trunk\n"
 
-#: readable-names.php:86
-msgid "Error: non readable name"
-msgstr "Ошибка: нечитаемое имя"
+#: readable-names.php:89
+msgid "Error: Non readable name"
+msgstr "Ошибка: Не читаемое имя"
 
-#: readable-names.php:137
+#: readable-names.php:143
 #, php-format
-msgid "Name &ldquo;%s&rdquo; contains an invalid character &ldquo;%s&rdquo;."
-msgstr "Имя &laquo;%s&raquo; содержит неверную букву &laquo;%s&raquo;."
+msgid "<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”."
+msgstr "<strong>Ошибка:</strong> Имя «%1$s» содержит неверный знак «%2$s». Используйте пожалуйста только такие знаки: «%3$s»."
 
-#: readable-names.php:155
+#: readable-names.php:162
 #, php-format
-msgid "Name &ldquo;%s&rdquo; does not contain required letters &ldquo;%s&rdquo;."
-msgstr "Имя &laquo;%s&raquo; не содержит обязательные буквы &laquo;%s&raquo;."
+msgid "<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %2$d characters long."
+msgstr "<strong>Ошибка:</strong> Имя «%1$s» слишком короткое. В нём должно быть как минимум %2$d знака."
 
-#: readable-names.php:173
+#: readable-names.php:192
 #, php-format
-msgid "Name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long."
-msgstr "Имя &laquo;%s&raquo; слишком короткое. В нём должно быть как минимум %d знака."
+msgid "<strong>Error:</strong> The name “%s” does not begin with a capital letter."
+msgstr "<strong>Ошибка:</strong> Имя «%s» не начинается с заглавной буквы."
 
-#: readable-names.php:203
+#: readable-names.php:210
 #, php-format
-msgid "Name &ldquo;%s&rdquo; does not begin with a capital letter."
-msgstr "Имя &laquo;%s&raquo; не начинается с заглавной буквы."
+msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
+msgstr "<strong>Ошибка:</strong> В имени «%s» слишком много заглавных букв."
 
-#: readable-names.php:221
-#, php-format
-msgid "Name &ldquo;%s&rdquo; has to many capital letters."
-msgstr "В имени &laquo;%s&raquo; слишком много заглавных букв."
+#: readable-names.php:247
+#: readable-names.php:257
+msgid "Readable Names Settings"
+msgstr "Настройка читаемых имён"
 
-#: readable-names.php:263
-msgid "Readable Names Options"
-msgstr "Настройка «Читаемых имён»"
-
+#. #-#-#-#-#  plugin.pot (Readable Names 0.5.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: readable-names.php:264 readable-names.php:273
+#: readable-names.php:248
 msgid "Readable Names"
 msgstr "Читаемые имена"
 
-#: readable-names.php:289
-msgid "Allowed characters"
-msgstr "Разрешённые буквы"
+#: readable-names.php:262
+msgid "Save Changes"
+msgstr ""
 
-#: readable-names.php:290
+#: readable-names.php:273
+msgid "Allowed characters"
+msgstr "Разрешённые знаки"
+
+#: readable-names.php:274
 msgid "Small letters"
 msgstr "Прописные буквы"
 
-#: readable-names.php:291
+#: readable-names.php:275
 msgid "Capital letters"
 msgstr "Заглавные буквы"
 
-#: readable-names.php:292
-msgid "Required letters"
-msgstr "Обязательные буквы"
-
-#: readable-names.php:293
+#: readable-names.php:276
 msgid "Digits"
 msgstr "Цифры"
 
-#: readable-names.php:296
-msgid "Rules"
-msgstr "Правила"
+#: readable-names.php:279
+msgid "Grammar"
+msgstr "Грамматика"
 
-#: readable-names.php:297
+#: readable-names.php:280
 msgid "Minimum name length"
 msgstr "Минимальная длина имени"
 
-#: readable-names.php:298
+#: readable-names.php:281
 msgid "First character must be a capital letter"
 msgstr "Первая буква должна быть заглавной"
 
-#: readable-names.php:299
+#: readable-names.php:282
 msgid "One capital letter only"
 msgstr "Только одна заглавная буква"
 
-#: readable-names.php:303
+#: readable-names.php:285
+msgid "Affected roles"
+msgstr "Затронутые роли"
+
+#: readable-names.php:286
+msgid "Visitor"
+msgstr "Посетитель"
+
+#: readable-names.php:287
+msgid "User"
+msgstr "Пользователь"
+
+#: readable-names.php:291
 msgid "Whitespace is always allowed."
 msgstr "Пробел можно ставить всегда."
 
-#: readable-names.php:351
+#: readable-names.php:328
 msgid "Depending on allowed characters."
 msgstr "В зависимости от разрешённых знаков."
 
-#: readable-names.php:362
+#: readable-names.php:339
 msgid "characters"
 msgstr "знака"
 
-#. Plugin URI of the plugin/theme
-msgid "http://wordpress.org/extend/plugins/readable-names/"
+#: readable-names.php:363
+#, php-format
+msgid "Depending on <a href=\"%s\">discussion settings</a>."
+msgstr "В зависимости от <a href=\"%s\">настроек обсуждения</a>."
+
+#: readable-names.php:483
+msgid "Settings"
 msgstr ""
 
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/readable-names/"
+msgstr "http://wordpress.org/extend/plugins/readable-names/"
+
 #. Description of the plugin/theme
-msgid "The plugin forces commenters to write their names in the language "
-"that your blog uses."
-msgstr "Плагин заставляет отзывчивых посетителей писать свои имена на языке твоего блога."
+msgid "The plugin forces commenters to write their names in the language that your blog uses."
+msgstr "Плагин заставляет отзывчивых гостей писать свои имена на языке твоего блога."
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
@@ -111,4 +135,5 @@ msgstr "Анатоль Бродер"
 
 #. Author URI of the plugin/theme
 msgid "http://doktorbro.net/"
-msgstr ""
+msgstr "http://doktorbro.net/"
+
