@@ -140,7 +140,7 @@ class Readable_Names {
 			$position = mb_strpos( $allowed_characters, $letter, 0, 'UTF-8' );
 			
 			if ( false == $position ) {
-				$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%1$s&rdquo; contains an invalid character: &ldquo;%2$s&rdquo;. Please only use these characters: &ldquo;%3$s&rdquo;.', 'readable_names' ), $name, $letter, $allowed_characters );
+				$result = sprintf( __( '<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”.', 'readable_names' ), $name, $letter, $allowed_characters );
 			}
 		}
 								
@@ -159,7 +159,7 @@ class Readable_Names {
 		$length = mb_strlen( $name, 'UTF-8' );
 
 		if ( $length <  $this->options_field( 'minimum_name_length' ) ) {
-			$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%s&rdquo; is too short. It has to be at least %d characters long.', 'readable_names' ), $name, $this->options_field( 'minimum_name_length' ) );
+			$result = sprintf( __( '<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %2$d characters long.', 'readable_names' ), $name, $this->options_field( 'minimum_name_length' ) );
 		}
 
 		return $result;
@@ -189,7 +189,7 @@ class Readable_Names {
 
 		$first_letter = mb_substr( $name, 0, 1, 'UTF-8' );
 		if ( $this->strings_compare_count( $first_letter, $this->options_field( 'allowed_capital_letters' ) ) == 0 ) {
-			$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%s&rdquo; does not begin with a capital letter.', 'readable_names' ), $name );
+			$result = sprintf( __( '<strong>Error:</strong> The name “%s” does not begin with a capital letter.', 'readable_names' ), $name );
 		}
 		
 		return $result;
@@ -207,7 +207,7 @@ class Readable_Names {
 		$result = null;
 		
 		if ( $this->strings_compare_count( $name, $this->options_field( 'allowed_capital_letters' ) ) > 1 ) {
-			$result = sprintf( __( '<strong>Error:</strong> The name &ldquo;%s&rdquo; has to many capital letters.', 'readable_names' ), $name );
+			$result = sprintf( __( '<strong>Error:</strong> The name “%s” has to many capital letters.', 'readable_names' ), $name );
 		}
 		
 		return $result;
