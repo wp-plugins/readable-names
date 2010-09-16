@@ -1,9 +1,9 @@
 === Readable Names ===
 Contributors: doktor-bro
-Tags: comments, usability, etiquette, spam
+Tags: comments, usability, discussion, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.5.1
+Stable tag: 0.6
 
 The plugin forces commenters to write their names in the language that your blog uses.
 
@@ -11,11 +11,10 @@ The plugin forces commenters to write their names in the language that your blog
 
 The plugin forces commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined language standards can create your own slang. Less spam is a welcome side effect.
 
-= Predefined languages =
-* English
-* German
-* Persian (by [Alefba](http://alefba.us/))
-* Russian
+= Translation =
+* German `de_DE`
+* Persian `fa_IR` by [Alefba](http://alefba.us/)
+* Russian `ru_RU`
 
 = Support =
 Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored. The only supported location for support questions is [http://wordpress.org/tags/readable-names](http://wordpress.org/tags/readable-names).
@@ -35,6 +34,12 @@ or download through the 'Plugins' menu in WordPress.
 2. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.6 =
+* Better error style
+* Added section 'Affected users' with options 'User' and 'Visitor' 
+* Added the link to support forum
+* Removed option 'required_letters'
 
 = 0.5.1 =
 * Change default multibyte encoding to UTF-8
