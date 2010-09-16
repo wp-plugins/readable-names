@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Readable Names 0.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
-"POT-Creation-Date: 2010-09-15 23:29+0000\n"
+"POT-Creation-Date: 2010-09-16 19:31+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Anatol Broder <bro@doktorbro.net>\n"
 "Language-Team: bownat <sourenaa@gmail.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/svn/readable-names/trunk\n"
 
 #: readable-names.php:89
-msgid "Error: Non readable name"
+msgid "Error: The name is not readable"
 msgstr "خطا: نام ناخواندنی است"
 
 #: readable-names.php:143
@@ -46,7 +46,7 @@ msgstr "نام &ldquo;%s&rdquo; تعداد خارج از اندازه ای حر�
 msgid "Readable Names Settings"
 msgstr "انتخاب ها برای افزونه ی نام های قابل خواندن"
 
-#. #-#-#-#-#  plugin.pot (Readable Names 0.5.1)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Readable Names 0.6)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: readable-names.php:248
 msgid "Readable Names"
