@@ -450,30 +450,30 @@ class Readable_Names {
 			'check_visitor' => true,
 			'check_user' => true
 		);
-
 		$locale = get_locale();
-		
+		// German
+		if ( 'de_DE' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
+			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
+		}
+		// Icelandic
+		elseif ( 'is_IS' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'aábdðeéfghiíjklmnoóprstuúvxyýþæö';
+			$options[ 'allowed_capital_letters' ] = 'AÁBDÐEÉFGHIÍJKLMNOÓPRSTUÚVXYÝÞÆÖ';
+		}
 		// Persian
-		if ( 'fa_IR' == $locale ) {
+		elseif ( 'fa_IR' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'اآأأبپتثجچحخدذرزژسشصضطظعغفقکكگلمنوؤهةیيئ';
 			$options[ 'allowed_capital_letters' ] = '';
 			$options[ 'minimum_name_length' ] = 3;
 			$options[ 'first_letter_capital' ] = false;
 			$options[ 'one_capital_letter_only' ] = false;
 		}
-		
-		// German
-		if ( 'de_DE' == $locale ) {
-			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
-			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
-		}
-		
 		// Russian
-		if ( 'ru_RU' == $locale ) {
+		elseif ( 'ru_RU' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 			$options[ 'allowed_capital_letters' ] = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЭЮЯ';
 		}
-		
 		return $options;
 	}
 	
