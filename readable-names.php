@@ -3,7 +3,7 @@
 Plugin Name: Readable Names
 Plugin URI: http://wordpress.org/extend/plugins/readable-names/
 Description: The plugin forces commenters to write their names in the language that your blog uses.
-Version: 0.6
+Version: 0.6.1
 Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
@@ -139,7 +139,7 @@ class Readable_Names {
 			
 			$position = mb_strpos( $allowed_characters, $letter, 0, 'UTF-8' );
 			
-			if ( false == $position ) {
+			if ( false === $position ) {
 				$result = sprintf( __( '<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”.', 'readable_names' ), $name, $letter, $allowed_characters );
 			}
 		}
