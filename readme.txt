@@ -13,6 +13,7 @@ The plugin forces commenters to write their names in the language that your blog
 
 = Translation =
 * German `de_DE`
+* Hebrew `he_IL` (by Yaron Shahrabani)
 * Persian `fa_IR` (by [Alefba](http://alefba.us/))
 * Russian `ru_RU`
 
