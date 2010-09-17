@@ -459,7 +459,8 @@ class Readable_Names {
 		// Icelandic
 		elseif ( 'is_IS' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'aábdðeéfghiíjklmnoóprstuúvxyýþæö';
-			$options[ 'allowed_capital_letters' ] = 'AÁBDÐEÉFGHIÍJKLMNOÓPRSTUÚVXYÝÞÆÖ';
+			$options[ 'allowed_capital_letters' ] = 'AÁBDEÉFGHIÍJKLMNOÓPRSTUÚVXYÝÞÆÖ';
+			$options[ 'minimum_name_length' ] = 3;
 		}
 		// Persian
 		elseif ( 'fa_IR' == $locale ) {
