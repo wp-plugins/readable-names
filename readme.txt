@@ -1,6 +1,6 @@
 === Readable Names ===
 Contributors: Doktor Bro
-Tags: comments, usability, discussion, spam, language
+Tags: comments, discussion, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
 Stable tag: 0.6.1
@@ -26,6 +26,7 @@ or download through the “Plugins” menu in WordPress.
 1. Activate the plugin through the “Plugins” menu in WordPress.
 1. Look for the “Settings” link to configure the options.
 1. Make your own rules on the option page.
+1. Give visitors a hint about your rules.
 
 == Screenshots ==
 
