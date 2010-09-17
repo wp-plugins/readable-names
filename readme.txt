@@ -23,7 +23,7 @@ Please use the Readable Names [support forum](http://wordpress.org/tags/readable
 
 1. Upload the `readable-names` folder to the `/wp-content/plugins/` directory
 or download through the “Plugins” menu in WordPress.
-1. Activate the plugin through the “Plugins' menu in WordPress.
+1. Activate the plugin through the “Plugins” menu in WordPress.
 1. Look for the “Settings” link to configure the options.
 1. Make your own rules on the option page.
 
