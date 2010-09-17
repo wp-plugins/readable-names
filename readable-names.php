@@ -456,6 +456,13 @@ class Readable_Names {
 			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
 			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
 		}
+		// Hebrew
+		elseif ( 'he_IL' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'למנסעפצקרשתםןףץאבגדהוזחטיכך';
+			$options[ 'allowed_capital_letters' ] = '';
+			$options[ 'first_letter_capital' ] = false;
+			$options[ 'one_capital_letter_only' ] = false;
+		}
 		// Icelandic
 		elseif ( 'is_IS' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'aábdðeéfghiíjklmnoóprstuúvxyýþæö';
