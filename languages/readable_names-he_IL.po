@@ -1,0 +1,148 @@
+# Translation of the WordPress plugin Readable Names 0.6 by Anatol Broder.
+# Copyright (C) 2010 Anatol Broder
+# This file is distributed under the same license as the Readable Names package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: Readable Names 0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
+"POT-Creation-Date: 2010-09-16 19:31+0000\n"
+"PO-Revision-Date: 2010-09-17 16:57+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Gezer (Hebrew)\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: readable-names.php:89
+msgid "Error: The name is not readable"
+msgstr "שגיאה: השם אינו קריא"
+
+#: readable-names.php:143
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2"
+"$s”. Please only use these characters: “%3$s”."
+msgstr ""
+"<strong>שגיאה:</strong> השם “%1$s” מכיל את התו הלא חוקי: “%2$s”. נא להשתמש "
+"בתווים אלו בלבד: “%3$s”."
+
+#: readable-names.php:162
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %"
+"2$d characters long."
+msgstr ""
+"<strong>שגיאה:</strong> השם “%1$s” קצר מדי. עליו להיות בן %2$d תווים לפחות."
+
+#: readable-names.php:192
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%s” does not begin with a capital letter."
+msgstr "<strong>שגיאה:</strong> השם “%s” אינו מתחיל באות גדולה."
+
+#: readable-names.php:210
+#, php-format
+msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
+msgstr "<strong>שגיאה:</strong> בשם “%s” יש יותר מדי אותיות גדולות."
+
+#: readable-names.php:247 readable-names.php:257
+msgid "Readable Names Settings"
+msgstr "הגדרות שמות קריאים"
+
+#. #-#-#-#-#  plugin.pot (Readable Names 0.6)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: readable-names.php:248
+msgid "Readable Names"
+msgstr "שמות קריאים"
+
+#: readable-names.php:262
+msgid "Save Changes"
+msgstr "שמירת השינויים"
+
+#: readable-names.php:273
+msgid "Allowed characters"
+msgstr "תווים מותרים"
+
+#: readable-names.php:274
+msgid "Small letters"
+msgstr "אותיות קטנות"
+
+#: readable-names.php:275
+msgid "Capital letters"
+msgstr "אותיות גדולות"
+
+#: readable-names.php:276
+msgid "Digits"
+msgstr "ספרות"
+
+#: readable-names.php:279
+msgid "Grammar"
+msgstr "דקדוק"
+
+#: readable-names.php:280
+msgid "Minimum name length"
+msgstr "אורך השם המזערי"
+
+#: readable-names.php:281
+msgid "First character must be a capital letter"
+msgstr "על האות הראשונה להיות אות גדולה"
+
+#: readable-names.php:282
+msgid "One capital letter only"
+msgstr "מותר אות גדולה אחת בלבד"
+
+#: readable-names.php:285
+msgid "Affected roles"
+msgstr "תפקידים שיושפעו"
+
+#: readable-names.php:286
+msgid "Visitor"
+msgstr "מבקר"
+
+#: readable-names.php:287
+msgid "User"
+msgstr "אורח"
+
+#: readable-names.php:291
+msgid "Whitespace is always allowed."
+msgstr "תמיד מותר להשתמש ברווחים."
+
+#: readable-names.php:328
+msgid "Depending on allowed characters."
+msgstr "בהתאם לתווים המותרים."
+
+#: readable-names.php:339
+msgid "characters"
+msgstr "תווים"
+
+#: readable-names.php:363
+#, php-format
+msgid "Depending on <a href=\"%s\">discussion settings</a>."
+msgstr "בהתאם ל<a href=\"%s\">הגדרות הדיון</a>."
+
+#: readable-names.php:483
+msgid "Settings"
+msgstr "הגדרות"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/readable-names/"
+msgstr "http://wordpress.org/extend/plugins/readable-names/"
+
+#. Description of the plugin/theme
+msgid ""
+"The plugin forces commenters to write their names in the language that your "
+"blog uses."
+msgstr "התוסף מאלץ את המגיבים לכתוב את שמותיהם בשפה בה נעשה שימוש בבלוג שלך."
+
+#. Author of the plugin/theme
+msgid "Anatol Broder"
+msgstr "Anatol Broder"
+
+#. Author URI of the plugin/theme
+msgid "http://doktorbro.net/"
+msgstr "http://doktorbro.net/"
