@@ -3,7 +3,7 @@ Contributors: Doktor Bro
 Tags: comments, discussion, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.6.1
+Stable tag: 0.7
 
 The plugin forces commenters to write their names in the language that your blog uses.
 
@@ -14,6 +14,7 @@ The plugin forces commenters to write their names in the language that your blog
 = Translation =
 * German `de_DE`
 * Hebrew `he_IL` (by Yaron Shahrabani)
+* Icelandic `is_IS` (by Hans Rúnar Snorrason)
 * Persian `fa_IR` (by [Alefba](http://alefba.us/))
 * Russian `ru_RU`
 
@@ -36,6 +37,11 @@ or download through the “Plugins” menu in WordPress.
 2. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.7 =
+* Add Hebrew translation (by Yaron Shahrabani)
+* Add Icelandic translation (by Hans Rúnar Snorrason)
+* Delete russian letters 'Ь' and 'Ъ' from the default settings 
 
 = 0.6.1 =
 * Fix a bug: not recognise the first letter of the alphabet
