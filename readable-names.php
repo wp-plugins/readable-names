@@ -460,6 +460,7 @@ class Readable_Names {
 		elseif ( 'he_IL' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'למנסעפצקרשתםןףץאבגדהוזחטיכך';
 			$options[ 'allowed_capital_letters' ] = '';
+			$options[ 'minimum_name_length' ] = 2;
 			$options[ 'first_letter_capital' ] = false;
 			$options[ 'one_capital_letter_only' ] = false;
 		}
