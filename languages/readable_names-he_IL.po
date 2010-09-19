@@ -141,7 +141,7 @@ msgstr "התוסף מאלץ את המגיבים לכתוב את שמותיהם �
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
-msgstr "Anatol Broder"
+msgstr "אנטול ברודר"
 
 #. Author URI of the plugin/theme
 msgid "http://doktorbro.net/"
