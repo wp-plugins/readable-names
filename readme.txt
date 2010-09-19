@@ -12,6 +12,7 @@ The plugin forces commenters to write their names in the language that your blog
 The plugin forces commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined language standards can create your own slang. Less spam is a welcome side effect.
 
 = Translation =
+* Finnish `fi` (by Christian Hellberg)
 * German `de_DE`
 * Hebrew `he_IL` (by [Yaron Shahrabani](https://edge.launchpad.net/~sh-yaron))
 * Icelandic `is_IS` (by Hans Rúnar Snorrason)
