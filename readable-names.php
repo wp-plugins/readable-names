@@ -451,8 +451,14 @@ class Readable_Names {
 			'check_user' => true
 		);
 		$locale = get_locale();
+		// Finnish
+		if ( 'fi' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'abcdefghijklmnopqrstuvwxyzåäö';
+			$options[ 'allowed_capital_letters' ] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
+			$options[ 'minimum_name_length' ] = 3;
+		}
 		// German
-		if ( 'de_DE' == $locale ) {
+		elseif ( 'de_DE' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
 			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
 		}
