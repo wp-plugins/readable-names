@@ -459,9 +459,9 @@ class Readable_Names {
 		// Hebrew
 		elseif ( 'he_IL' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'למנסעפצקרשתםןףץאבגדהוזחטיכך';
-			$options[ 'allowed_capital_letters' ] = '';
+			$options[ 'allowed_capital_letters' ] = 'למנסעפצקרשתאבגדהוזחטיכ';
 			$options[ 'minimum_name_length' ] = 2;
-			$options[ 'first_letter_capital' ] = false;
+			$options[ 'first_letter_capital' ] = true;
 			$options[ 'one_capital_letter_only' ] = false;
 		}
 		// Icelandic
