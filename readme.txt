@@ -1,9 +1,9 @@
 === Readable Names ===
 Contributors: Doktor Bro
-Tags: comments, discussion, grammar, language, readability, spam
+Tags: comments, discussion, grammar, language, readability, spam, Finnish, German, Hebrew, Icelandic, Persian, Russian
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.7
+Stable tag: 0.8
 
 The plugin forces commenters to write their names in the language that your blog uses.
 
@@ -38,6 +38,10 @@ or download through the “Plugins” menu in WordPress.
 2. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.8 =
+* Add Finnish translation (by Christian Hellberg)
+* Change Hebrew defaults
 
 = 0.7 =
 * Add Hebrew translation (by Yaron Shahrabani)
