@@ -1,0 +1,140 @@
+# Translation of the WordPress plugin Readable Names 0.6 by Anatol Broder.
+# Copyright (C) 2010 Anatol Broder
+# This file is distributed under the same license as the Readable Names package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Readable Names 0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
+"POT-Creation-Date: 2010-09-16 19:31+0000\n"
+"PO-Revision-Date: 2010-09-17 20:20-0000\n"
+"Last-Translator: Hans Rúnar Snorrason <hansrunar@gmail.com>\n"
+"Language-Team: Icelandic <hansrunar@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Icelandic\n"
+"X-Poedit-Country: ICELAND\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+
+#: readable-names.php:89
+msgid "Error: The name is not readable"
+msgstr "Villa: Nafnið er ekki lesanlegt"
+
+#: readable-names.php:143
+#, php-format
+msgid "<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”."
+msgstr "<strong>Villa:</strong> Nafnið “%1$s” inniheldur tákn sem ekki er hægt að nota: “%2$s”. Notaðu eingögnu eftirfarandi stafi: “%3$s”."
+
+#: readable-names.php:162
+#, php-format
+msgid "<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %2$d characters long."
+msgstr "<strong>Villa:</strong> Nafnð  “%1$s” er of stutt. Það verður að vera a.m.k. %2$d stafi."
+
+#: readable-names.php:192
+#, php-format
+msgid "<strong>Error:</strong> The name “%s” does not begin with a capital letter."
+msgstr "<strong>Villa:</strong> Nafnið “%s” byrjar ekki á stórum staf."
+
+#: readable-names.php:210
+#, php-format
+msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
+msgstr "<strong>Villa:</strong> Nafnið “%s” inniheldur of marga hástafi."
+
+#: readable-names.php:247
+#: readable-names.php:257
+msgid "Readable Names Settings"
+msgstr "Stillingar læsilegra nafna"
+
+#. #-#-#-#-#  plugin.pot (Readable Names 0.6)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: readable-names.php:248
+msgid "Readable Names"
+msgstr "Læsileg nöfn"
+
+#: readable-names.php:262
+msgid "Save Changes"
+msgstr "Vista breytingar"
+
+#: readable-names.php:273
+msgid "Allowed characters"
+msgstr "Leyfð tákn"
+
+#: readable-names.php:274
+msgid "Small letters"
+msgstr "Litlist stafir"
+
+#: readable-names.php:275
+msgid "Capital letters"
+msgstr "Hástafir"
+
+#: readable-names.php:276
+msgid "Digits"
+msgstr "Tákn"
+
+#: readable-names.php:279
+msgid "Grammar"
+msgstr "Málfræði"
+
+#: readable-names.php:280
+msgid "Minimum name length"
+msgstr "Lámark heiti nafns"
+
+#: readable-names.php:281
+msgid "First character must be a capital letter"
+msgstr "Fyrsti stafur verður að vera stór"
+
+#: readable-names.php:282
+msgid "One capital letter only"
+msgstr "Eingögnu einn stór stafur leyfður"
+
+#: readable-names.php:285
+msgid "Affected roles"
+msgstr "Hefur áhrif á"
+
+#: readable-names.php:286
+msgid "Visitor"
+msgstr "Gestur"
+
+#: readable-names.php:287
+msgid "User"
+msgstr "Notandi"
+
+#: readable-names.php:291
+msgid "Whitespace is always allowed."
+msgstr "Bil eru alltaf leyfð"
+
+#: readable-names.php:328
+msgid "Depending on allowed characters."
+msgstr "Háð leyfðum stöfum"
+
+#: readable-names.php:339
+msgid "characters"
+msgstr "Stafir"
+
+#: readable-names.php:363
+#, php-format
+msgid "Depending on <a href=\"%s\">discussion settings</a>."
+msgstr "Háð <a href=\"%s\">stillingum umræðna</a>."
+
+#: readable-names.php:483
+msgid "Settings"
+msgstr "Stillingar"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/readable-names/"
+msgstr "http://wordpress.org/extend/plugins/readable-names/"
+
+#. Description of the plugin/theme
+msgid "The plugin forces commenters to write their names in the language that your blog uses."
+msgstr "Þessi viðbót krefur þá sem skrifa athugasemdir til að skrifa nöfnin á því tungumáli sem blogg þig notar."
+
+#. Author of the plugin/theme
+msgid "Anatol Broder"
+msgstr "Anatol Broder"
+
+#. Author URI of the plugin/theme
+msgid "http://doktorbro.net/"
+msgstr "http://doktorbro.net/"
+

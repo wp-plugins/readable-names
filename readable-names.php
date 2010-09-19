@@ -3,7 +3,7 @@
 Plugin Name: Readable Names
 Plugin URI: http://wordpress.org/extend/plugins/readable-names/
 Description: The plugin forces commenters to write their names in the language that your blog uses.
-Version: 0.6
+Version: 0.8
 Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
@@ -139,7 +139,7 @@ class Readable_Names {
 			
 			$position = mb_strpos( $allowed_characters, $letter, 0, 'UTF-8' );
 			
-			if ( false == $position ) {
+			if ( false === $position ) {
 				$result = sprintf( __( '<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”.', 'readable_names' ), $name, $letter, $allowed_characters );
 			}
 		}
@@ -450,30 +450,45 @@ class Readable_Names {
 			'check_visitor' => true,
 			'check_user' => true
 		);
-
 		$locale = get_locale();
-		
+		// Finnish
+		if ( 'fi' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'abcdefghijklmnopqrstuvwxyzåäö';
+			$options[ 'allowed_capital_letters' ] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
+			$options[ 'minimum_name_length' ] = 3;
+		}
+		// German
+		elseif ( 'de_DE' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
+			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
+		}
+		// Hebrew
+		elseif ( 'he_IL' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'למנסעפצקרשתםןףץאבגדהוזחטיכך';
+			$options[ 'allowed_capital_letters' ] = 'למנסעפצקרשתאבגדהוזחטיכ';
+			$options[ 'minimum_name_length' ] = 2;
+			$options[ 'first_letter_capital' ] = true;
+			$options[ 'one_capital_letter_only' ] = false;
+		}
+		// Icelandic
+		elseif ( 'is_IS' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'aábdðeéfghiíjklmnoóprstuúvxyýþæö';
+			$options[ 'allowed_capital_letters' ] = 'AÁBDEÉFGHIÍJKLMNOÓPRSTUÚVXYÝÞÆÖ';
+			$options[ 'minimum_name_length' ] = 3;
+		}
 		// Persian
-		if ( 'fa_IR' == $locale ) {
+		elseif ( 'fa_IR' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'اآأأبپتثجچحخدذرزژسشصضطظعغفقکكگلمنوؤهةیيئ';
 			$options[ 'allowed_capital_letters' ] = '';
 			$options[ 'minimum_name_length' ] = 3;
 			$options[ 'first_letter_capital' ] = false;
 			$options[ 'one_capital_letter_only' ] = false;
 		}
-		
-		// German
-		if ( 'de_DE' == $locale ) {
-			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
-			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
-		}
-		
 		// Russian
-		if ( 'ru_RU' == $locale ) {
+		elseif ( 'ru_RU' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-			$options[ 'allowed_capital_letters' ] = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+			$options[ 'allowed_capital_letters' ] = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЭЮЯ';
 		}
-		
 		return $options;
 	}
 	
