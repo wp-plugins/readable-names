@@ -115,6 +115,9 @@ class Readable_Names {
 				$result = $this->check_name_length( $name );
 
 			if ( ! $result )
+				$result = $this->check_required_vowels( $name );
+
+			if ( ! $result )
 				$result = $this->check_first_letter_capital( $name );
 			
 			if ( ! $result )
@@ -216,6 +219,24 @@ class Readable_Names {
 		return $result;
 	}
 	
+	function check_required_vowels( $name ) {
+		$vowels = $this->options_field( 'required_vowels' );
+		if ( ! $vowels )
+			return;
+
+		if ( $this->name_is_number( $name ) )
+			return;
+
+		$count = 0;
+		$length = mb_strlen( $name, 'UTF-8' );
+		for ( $i = 0; ( $i < $length ) && ( ! $count ); $i++ ) {
+			$letter = mb_substr ( $name, $i, 1, 'UTF-8' );
+			if ( false !== mb_strpos( $vowels, $letter, 0, 'UTF-8' ) )
+				$count++;
+		}
+		return ( $count ? false : sprintf( __( '<strong>Error:</strong> The name “%1$s” does not contain required vowels: “%2$s”.', 'readable_names' ), $name, $vowels ) );
+    }
+	
 	function check_user_profile( $errors, $update, $user ) {
 		if ( ! $this->options_field( 'check_user' ) )
 			return;
@@ -283,6 +304,7 @@ class Readable_Names {
 		add_settings_field( 'minimum_name_length',  __( 'Minimum name length', 'readable_names' ), array( $this, 'admin_minimum_name_length' ), 'readable_names', 'section_grammar' );
 		add_settings_field( 'first_letter_capital',  __( 'First character must be a capital letter', 'readable_names' ), array( $this, 'admin_first_letter_capital' ), 'readable_names', 'section_grammar' );
 		add_settings_field( 'one_capital_letter_only',  __( 'One capital letter only', 'readable_names' ), array( $this, 'admin_one_capital_letter_only' ), 'readable_names', 'section_grammar' );
+		add_settings_field( 'required_vowels',  __( 'Required vowels', 'readable_names' ), array( $this, 'admin_required_vowels' ), 'readable_names', 'section_grammar' );
 		
 		// section "Affected roles" with id="section_affected_roles"
 		add_settings_section( 'section_affected_roles', __( 'Affected roles', 'readable_names' ), array( $this, 'admin_section_affected_roles_text' ), 'readable_names' );
@@ -366,6 +388,17 @@ class Readable_Names {
 		/>
 	<?php }
 	
+	function admin_required_vowels() { ?>
+		<input
+			id="required_vowels"
+			name="<?php echo 'readable_names'; ?>[required_vowels]"
+			type="text"
+			class="regular-text"
+			value="<?php echo $this->options_field( 'required_vowels' ) ?>"
+		/>
+		<span class="description">(<?php echo mb_strlen( $this->options_field( 'required_vowels' ), 'UTF-8' ) ?>)</span>
+	<?php }
+
 	function admin_section_affected_roles_text() {
 		echo '<p class="description">' . sprintf( __( 'Depending on <a href="%s">discussion settings</a>.', 'readable_names' ), admin_url( 'options-discussion.php' ) ) . '</p>';
 	}
@@ -412,6 +445,9 @@ class Readable_Names {
 		$valid_options[ 'allowed_small_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_small_letters' ] );
 		$valid_options[ 'allowed_capital_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_capital_letters' ] );
 		$valid_options[ 'allowed_digits' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_digits' ] );
+		
+		// validate required vowels
+		$valid_options[ 'required_vowels' ] = $this->admin_validate_input_letters( $valid_options[ 'required_vowels' ] );
 		
 		// minimum name length must be between 1 and 3
 		$valid_options[ 'minimum_name_length' ] = absint( $valid_options[ 'minimum_name_length' ] );
@@ -529,8 +565,7 @@ class Readable_Names {
 		$commenter = wp_get_current_commenter();
 		$req = get_option( 'require_name_email' );
 		$aria_req = ( $req ? " aria-required='true'" : '' );
-		echo '<p class="comment-form-author">' . '<label for="author">' . __( 'Readable name', 'readable_names' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+		echo '<p class="comment-form-author">' . '<label for="author">' . __( 'Readable name', 'readable_names' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
 	}
 	
 }	
