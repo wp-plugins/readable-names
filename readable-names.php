@@ -31,6 +31,7 @@ class Readable_Names {
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'call_add_options_page' ) );
 		add_filter( 'plugin_action_links', array( $this, 'init_action_links' ), 10, 2 );
+		add_filter( 'plugin_row_meta', array( $this, 'init_row_meta' ), 10, 2 );
 		if ( $this->options_field( 'modify_comment_form' ) ) { 
 			add_filter( 'comment_form_field_author', array ( $this, 'modify_form_author_label' ) );
 		}
@@ -556,6 +557,16 @@ class Readable_Names {
 			return array_merge(
 				array( sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=readable_names' ), __( 'Settings' ) ) ),
 				$links
+			);
+		}
+		return $links;
+	}
+	
+	function init_row_meta( $links, $file ) {
+		if ( plugin_basename( __FILE__ ) == $file ) {
+			return array_merge(
+				$links,
+				array( sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/tags/readable-names', __( 'Get support', 'readable_names' ) ) )
 			);
 		}
 		return $links;
