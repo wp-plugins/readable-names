@@ -31,6 +31,9 @@ class Readable_Names {
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'call_add_options_page' ) );
 		add_filter( 'plugin_action_links', array( $this, 'init_action_links' ), 10, 2 );
+		if ( $this->options_field( 'modify_comment_form' ) ) { 
+			add_filter( 'comment_form_field_author', array ( $this, 'modify_form_author_label' ) );
+		}
 	}
 	
 	function plugin_init() {
@@ -285,6 +288,10 @@ class Readable_Names {
 		add_settings_section( 'section_affected_roles', __( 'Affected roles', 'readable_names' ), array( $this, 'admin_section_affected_roles_text' ), 'readable_names' );
 		add_settings_field( 'check_visitor',  __( 'Visitor', 'readable_names' ), array( $this, 'admin_check_visitor' ), 'readable_names', 'section_affected_roles' );
 		add_settings_field( 'check_user',  __( 'User', 'readable_names' ), array( $this, 'admin_check_user' ), 'readable_names', 'section_affected_roles' );
+		
+		// section "Appearance" with id="section_appearance"
+		add_settings_section( 'section_appearance', __( 'Appearance', 'readable_names' ), array( $this, 'admin_section_appearance_text' ), 'readable_names' );
+		add_settings_field( 'modify_comment_form',  __( 'Modify the comment form', 'readable_names' ), array( $this, 'admin_modify_comment_form' ), 'readable_names', 'section_appearance' );
 	}
 	
 	function admin_section_characters_text() {
@@ -383,6 +390,21 @@ class Readable_Names {
 		/>
 	<?php }
 	
+	function admin_section_appearance_text() {
+		echo '<p class="description">' . sprintf( __( 'Depending on the <a href="%s">current theme</a>.', 'readable_names' ), admin_url( 'themes.php' ) ) . '</p>';
+	}
+
+	function admin_modify_comment_form() { ?>
+		<input
+			id="modify_comment_form" 
+			name="<?php echo 'readable_names'; ?>[modify_comment_form]" 
+			type="checkbox"
+			value="1" 
+			<?php checked( '1', $this->options_field( 'modify_comment_form' ) ) ?>
+		/>
+		<span class="description"><?php printf( __( '“%1$s” instead of “%2$s”', 'readable_names' ), __( 'Readable name', 'readable_names' ), __( 'Name' ) ); ?></span>
+	<?php }
+	
 	function options_validate($options) {
 		$valid_options = $options;
 
@@ -448,7 +470,8 @@ class Readable_Names {
 			'first_letter_capital' => true,
 			'one_capital_letter_only' => true,
 			'check_visitor' => true,
-			'check_user' => true
+			'check_user' => true,
+			'modify_comment_form' => true
 		);
 		$locale = get_locale();
 		// Finnish
@@ -500,6 +523,14 @@ class Readable_Names {
 			);
 		}
 		return $links;
+	}
+	
+	function modify_form_author_label() {
+		$commenter = wp_get_current_commenter();
+		$req = get_option( 'require_name_email' );
+		$aria_req = ( $req ? " aria-required='true'" : '' );
+		echo '<p class="comment-form-author">' . '<label for="author">' . __( 'Readable name', 'readable_names' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
 	}
 	
 }	
