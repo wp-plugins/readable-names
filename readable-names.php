@@ -566,7 +566,7 @@ class Readable_Names {
 		if ( plugin_basename( __FILE__ ) == $file ) {
 			return array_merge(
 				$links,
-				array( sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/tags/readable-names', __( 'Get support', 'readable_names' ) ) )
+				array( sprintf( '<a href="%s">%s</a>', 'http://wordpress.org/tags/readable-names', __( 'Ask for help', 'readable_names' ) ) )
 			);
 		}
 		return $links;
