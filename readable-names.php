@@ -25,18 +25,23 @@ class Readable_Names {
 		register_uninstall_hook( __FILE__, array( $this, 'plugin_uninstall' ) );
 		
 		// add actions
+		// load text domain
 		add_action( 'init', array( $this, 'plugin_init' ) );
-		add_action( 'pre_comment_on_post', array( $this, 'check_comment_author' ) );
+		// frontend
+		if ( $this->options_field( 'check_visitor' ) ) {
+			add_action( 'pre_comment_on_post', array( $this, 'check_comment_author' ) );
+			if ( $this->options_field( 'modify_comment_form' ) ) { 
+				add_filter( 'comment_form_field_author', array ( $this, 'modify_form_author_label' ) );
+			}
+		}
 		if ( $this->options_field( 'check_user' ) ) {
 			add_action( 'user_profile_update_errors', array( $this, 'check_user_profile' ), 1, 3 );
 		}
+		// backend
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'call_add_options_page' ) );
 		add_filter( 'plugin_action_links', array( $this, 'init_action_links' ), 10, 2 );
 		add_filter( 'plugin_row_meta', array( $this, 'init_row_meta' ), 10, 2 );
-		if ( $this->options_field( 'modify_comment_form' ) ) { 
-			add_filter( 'comment_form_field_author', array ( $this, 'modify_form_author_label' ) );
-		}
 	}
 	
 	function plugin_init() {
@@ -79,15 +84,12 @@ class Readable_Names {
 			return false;
 	}
 	
-	function check_comment_author($comment_post_ID) {
-		if ( ( ! $this->options_field( 'check_visitor' ) ) && ( ! is_user_logged_in() ) )
+	function check_comment_author( $comment_post_ID ) {
+		if ( is_user_logged_in() )
 			return;
-		
-		$result = null;
-		
+
 		$comment_author = ( isset( $_POST[ 'author' ] ) ) ? trim( strip_tags( $_POST[ 'author' ] ) ) : null;
-	
-		if ( empty( $comment_author ) ) 
+		if ( ! $comment_author ) 
 			return;
 		
 		$result = $this->check_full_name( $comment_author );
