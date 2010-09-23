@@ -555,8 +555,8 @@ class Readable_Names {
 	function init_action_links( $links, $file ) {
 		if ( plugin_basename( __FILE__ ) == $file ) {
 			return array_merge(
-				array( sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=readable_names' ), __( 'Settings' ) ) ),
-				$links
+				$links,
+				array( sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=readable_names' ), __( 'Settings' ) ) )
 			);
 		}
 		return $links;
