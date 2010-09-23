@@ -500,7 +500,7 @@ class Readable_Names {
 	}
 	
 	function options_default() {
-		// English
+		// default (English)
 		$options = array(
 			'allowed_small_letters' => 'abcdefghijklmnopqrstuvwxyz',
 			'allowed_capital_letters' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -508,6 +508,7 @@ class Readable_Names {
 			'minimum_name_length' => 2,
 			'first_letter_capital' => true,
 			'one_capital_letter_only' => true,
+			'required_vowels' => 'aeiouyAEIOUY',
 			'check_visitor' => true,
 			'check_user' => true,
 			'modify_comment_form' => true
@@ -518,11 +519,13 @@ class Readable_Names {
 			$options[ 'allowed_small_letters' ] = 'abcdefghijklmnopqrstuvwxyzåäö';
 			$options[ 'allowed_capital_letters' ] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
 			$options[ 'minimum_name_length' ] = 3;
+			$options[ 'required_vowels' ] = 'aeiouyäöAEIOUYÄÖ';
 		}
 		// German
 		elseif ( 'de_DE' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'aäbcdefghijklmnoöpqrsßtuüvwxyz';
 			$options[ 'allowed_capital_letters' ] = 'AÄBCDEFGHIJKLMNOÖPQRSTUÜVWXYZ';
+			$options[ 'required_vowels' ] = 'aeiouyäöüAEIOUYÄÖÜ';
 		}
 		// Hebrew
 		elseif ( 'he_IL' == $locale ) {
@@ -550,6 +553,7 @@ class Readable_Names {
 		elseif ( 'ru_RU' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 			$options[ 'allowed_capital_letters' ] = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЭЮЯ';
+			$options[ 'required_vowels' ] = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ';
 		}
 		return $options;
 	}
