@@ -27,7 +27,9 @@ class Readable_Names {
 		// add actions
 		add_action( 'init', array( $this, 'plugin_init' ) );
 		add_action( 'pre_comment_on_post', array( $this, 'check_comment_author' ) );
-		add_action( 'user_profile_update_errors', array( $this, 'check_user_profile' ), 1, 3 );
+		if ( $this->options_field( 'check_user' ) ) {
+			add_action( 'user_profile_update_errors', array( $this, 'check_user_profile' ), 1, 3 );
+		}
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'call_add_options_page' ) );
 		add_filter( 'plugin_action_links', array( $this, 'init_action_links' ), 10, 2 );
@@ -239,30 +241,27 @@ class Readable_Names {
     }
 	
 	function check_user_profile( $errors, $update, $user ) {
-		if ( ! $this->options_field( 'check_user' ) )
-			return;
-		
 		// don't check the user with 'edit_users' capability
 		if ( current_user_can( 'edit_users' ) )
 			return;
 		
 		// first name
-		$result = ( $user->first_name ) ? $this->check_full_name( $user->first_name ) : null;
+		$result = $this->check_full_name( $user->first_name );
 		if ( $result )
 			$errors->add( 'first_name', $result, array( 'form-field' => 'first_name' ) );
 		
 		// last name
-		$result = ( $user->last_name ) ? $this->check_full_name( $user->last_name ) : null;
+		$result = $this->check_full_name( $user->last_name );
 		if ( $result )
 			$errors->add( 'last_name', $result, array( 'form-field' => 'last_name' ) );	
 		
 		// nickname
-		$result = ( $user->nickname ) ? $this->check_full_name( $user->nickname ) : null;
+		$result = $this->check_full_name( $user->nickname );
 		if ( $result )
 			$errors->add( 'nickname', $result, array( 'form-field' => 'nickname' ) );	
 
 		// display name
-		$result = ( $user->display_name ) ? $this->check_full_name( $user->display_name ) : null;
+		$result = $this->check_full_name( $user->display_name );
 		if ( $result )
 			$errors->add( 'display_name', $result, array( 'form-field' => 'display_name' ) );
 	}
