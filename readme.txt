@@ -35,9 +35,15 @@ or download through the “Plugins” menu in WordPress.
 
 1. The admin option page is clear.
 
-2. The error messages are user friendly.
+2. The comment form gives a decent hint.
+
+3. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.9 =
+* Add option “Required vowels”
+* Add option “Modify the comment form”
 
 = 0.8 =
 * Add Finnish translation (by Christian Hellberg)
