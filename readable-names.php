@@ -8,6 +8,7 @@ Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
 Text Domain: readable_names
+Domain Path: /languages/
 */
 
 if ( ! function_exists( 'is_admin' ) ) {
