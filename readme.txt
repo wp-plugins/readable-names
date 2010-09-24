@@ -3,7 +3,7 @@ Contributors: Doktor Bro
 Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.8
+Stable tag: 0.9
 
 The plugin forces commenters to write their names in the language that your blog uses.
 
