@@ -315,7 +315,7 @@ class Readable_Names {
 		add_settings_field( 'check_user',  __( 'User', 'readable_names' ), array( $this, 'admin_check_user' ), 'readable_names', 'section_affected_roles' );
 		
 		// section "Appearance" with id="section_appearance"
-		add_settings_section( 'section_appearance', __( 'Appearance', 'readable_names' ), array( $this, 'admin_section_appearance_text' ), 'readable_names' );
+		add_settings_section( 'section_appearance', __( 'Appearance' ), array( $this, 'admin_section_appearance_text' ), 'readable_names' );
 		add_settings_field( 'modify_comment_form',  __( 'Modify the comment form', 'readable_names' ), array( $this, 'admin_modify_comment_form' ), 'readable_names', 'section_appearance' );
 	}
 	
