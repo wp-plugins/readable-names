@@ -1,165 +1,165 @@
+# Translation of the WordPress plugin Readable Names 0.6 by Anatol Broder.
+# Copyright (C) 2010 Anatol Broder
+# This file is distributed under the same license as the Readable Names package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Readable Names 0.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
 "POT-Creation-Date: 2010-09-23 11:31+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Anatol Broder <bro@doktorbro.net>\n"
-"Language-Team: Anatol Broder <bro@doktorbro.net>\n"
+"PO-Revision-Date: 2010-09-23 16:54+0200\n"
+"Last-Translator: Christian Hellberg <kaannokset.hellberg@gmail.com>\n"
+"Language-Team: C. Hellberg <kaannokset.hellberg@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Country: GERMANY\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: /home/svn/readable-names/trunk\n"
-"X-Poedit-SearchPath-0: /home/svn/readable-names/trunk\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: FINLAND\n"
 
 #: readable-names.php:93
 msgid "Error: The name is not readable"
-msgstr "Fehler: Der Name ist nicht lesbar"
+msgstr "Virhe: Nimi ei ole luettavassa muodossa."
 
 #: readable-names.php:150
 #, php-format
 msgid "<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”."
-msgstr "<strong>Fehler:</strong> Der Name »%1$s«; enthält ein unzulässiges Zeichen »;%2$s«. Bitte nur diese Zeichen verwenden: »%3$s«."
+msgstr "<strong>Virhe:</strong> Nimi ”%1$s” sisältää virheellisen merkin: ”%2$s”. Käytäthän vain seuraavia merkkejä: ”%3$s”."
 
 #: readable-names.php:169
 #, php-format
 msgid "<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %2$d characters long."
-msgstr "<strong>Fehler:</strong> Der Name »%1$s« ist zu kurz. Er sollte mindestens %2$d Zeichen lang sein."
+msgstr "<strong>Virhe:</strong> Nimi ”%1$s” on liian lyhyt. Nimen täytyy olla vähintään %2$d merkkiä pitkä."
 
 #: readable-names.php:199
 #, php-format
 msgid "<strong>Error:</strong> The name “%s” does not begin with a capital letter."
-msgstr "<strong>Fehler:</strong> Der Name »%s« beginnt nicht mit einem Großbuchstaben."
+msgstr "<strong>Virhe:</strong> Nimi ”%s” ei ala isolla kirjaimella."
 
 #: readable-names.php:217
 #, php-format
 msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
-msgstr "<strong>Fehler:</strong> Der Name »%s« enthält zu viele Großbuchstaben."
+msgstr "<strong>Virhe:</strong> Nimi ”%s” sisältää monia isoja kirjaimia."
 
 #: readable-names.php:238
 #, php-format
 msgid "<strong>Error:</strong> The name “%1$s” does not contain required vowels: “%2$s”."
-msgstr "<strong>Fehler:</strong> Der Name »%1$s« enthält nicht die erforderlichen Vokale: »%2$s«."
+msgstr "<strong>Virhe:</strong> Nimi ”%1$s” ei sisällä vaadittavia vokaaleja: ”%2$s”."
 
 #: readable-names.php:272
 #: readable-names.php:282
 msgid "Readable Names Settings"
-msgstr "Einstellungen für lesbare Namen"
+msgstr "Luettavien nimien asetukset"
 
 #. #-#-#-#-#  plugin.pot (Readable Names 0.8)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: readable-names.php:273
 msgid "Readable Names"
-msgstr "Lesbare Namen"
+msgstr "Luettavat nimet"
 
 #: readable-names.php:287
 msgid "Save Changes"
-msgstr ""
+msgstr "Tallenna muutokset"
 
 #: readable-names.php:298
 msgid "Allowed characters"
-msgstr "Erlaubte Zeichen"
+msgstr "Sallitut merkit"
 
 #: readable-names.php:299
 msgid "Small letters"
-msgstr "Kleinbuchstaben"
+msgstr "Pienet kirjaimet"
 
 #: readable-names.php:300
 msgid "Capital letters"
-msgstr "Großbuchstaben"
+msgstr "Isot kirjaimet"
 
 #: readable-names.php:301
 msgid "Digits"
-msgstr "Ziffern"
+msgstr "Numerot"
 
 #: readable-names.php:304
 msgid "Grammar"
-msgstr "Grammatik"
+msgstr "Kielioppi"
 
 #: readable-names.php:305
 msgid "Minimum name length"
-msgstr "Mindestlänge des Namens"
+msgstr "Nimen minimipituus"
 
 #: readable-names.php:306
 msgid "First character must be a capital letter"
-msgstr "Der erste Buchstabe muss ein Großbuchstabe sein"
+msgstr "Ensimmäisen kirjaimen tulee olla iso kirjain."
 
 #: readable-names.php:307
 msgid "One capital letter only"
-msgstr "Nur ein Großbuchstabe"
+msgstr "Vain yksi iso kirjain."
 
 #: readable-names.php:308
 msgid "Required vowels"
-msgstr "Erforderliche Vokale"
+msgstr "Vaaditut vokaalit"
 
 #: readable-names.php:311
 msgid "Affected roles"
-msgstr "Betroffene Rollen"
+msgstr "Vaikuttavat roolit"
 
 #: readable-names.php:312
 msgid "Visitor"
-msgstr "Besucher"
+msgstr "Vierailija"
 
 #: readable-names.php:313
 msgid "User"
-msgstr "Benutzer"
+msgstr "Käyttäjä"
 
 #: readable-names.php:316
 msgid "Appearance"
-msgstr ""
+msgstr "Ulkoasu"
 
 #: readable-names.php:317
 msgid "Modify the comment form"
-msgstr "Das Kommentarformular anpassen"
+msgstr "Mukautettu kommentointilomake"
 
 #: readable-names.php:321
 msgid "Whitespace is always allowed."
-msgstr "Das Leerzeichen ist immer erlaubt."
+msgstr "Tyhjät kentät sallitaan."
 
 #: readable-names.php:358
 msgid "Depending on allowed characters."
-msgstr "In Abhängigkeit von den erlaubten Zeichen."
+msgstr "Riippuu sallituista merkeistä."
 
 #: readable-names.php:369
 msgid "characters"
-msgstr "Zeichen"
+msgstr "merkkiä"
 
 #: readable-names.php:404
 #, php-format
 msgid "Depending on <a href=\"%s\">discussion settings</a>."
-msgstr "In Abhängigkeit von den <a href=\"%s\">Einstellungen für die Diskussion</a>."
+msgstr "Riippuu <a href=\"%s\">keskusteluasetuksista</a>."
 
 #: readable-names.php:428
 #, php-format
 msgid "Depending on the <a href=\"%s\">current theme</a>."
-msgstr "In Abhängigkeit von dem <a href=\"%s\">aktuellen Theme</a>."
+msgstr "Riippuu <a href=\"%s\">teeman asetuksista</a>."
 
 #: readable-names.php:439
 #, php-format
 msgid "“%1$s” instead of “%2$s”"
-msgstr "»%1$s« statt »%2$s«"
+msgstr "Muuttaa ”%2$s”-kohdan otsikoksi ”%1$s”."
 
 #: readable-names.php:439
 #: readable-names.php:579
 msgid "Readable name"
-msgstr "Lesbarer Name"
+msgstr "Luettava nimi"
 
 #: readable-names.php:439
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: readable-names.php:558
 msgid "Settings"
-msgstr ""
+msgstr "Asetukset"
 
 #: readable-names.php:569
 msgid "Ask for help"
-msgstr "Um Hilfe bitten"
+msgstr "Kysy apua"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/readable-names/"
@@ -167,7 +167,7 @@ msgstr "http://wordpress.org/extend/plugins/readable-names/"
 
 #. Description of the plugin/theme
 msgid "The plugin forces commenters to write their names in the language that your blog uses."
-msgstr "Das Plugin bittet kommentierende Gäste, ihre Namen in der Sprache des Blogs zu schreiben."
+msgstr "Tämä lisäosa mahdollistaa kommentoijille kirjoittaa heidän nimensä blogisi käyttämällä kielellä."
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
