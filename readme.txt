@@ -18,6 +18,7 @@ The plugin forces commenters to write their names in the language that your blog
 * Icelandic `is_IS` (by Hans Rúnar Snorrason)
 * Persian `fa_IR` (by [Alefba](http://alefba.us/))
 * Russian `ru_RU`
+
 You are welcome to translate the plugin in your language. No coding skills or extra software required! Post your translation in the [support forum](http://wordpress.org/tags/readable-names).
 
 = Support =
