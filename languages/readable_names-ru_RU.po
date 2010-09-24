@@ -44,7 +44,7 @@ msgstr "<strong>Ошибка:</strong> В имени «%s» слишком мн�
 #: readable-names.php:238
 #, php-format
 msgid "<strong>Error:</strong> The name “%1$s” does not contain required vowels: “%2$s”."
-msgstr "<strong>Ошибка:</strong> Имя «%1$s» не содержит обязательных гласных: «%2$s»."
+msgstr "<strong>Ошибка:</strong> Имя «%1$s» не содержит обязательные гласные: «%2$s»."
 
 #: readable-names.php:272
 #: readable-names.php:282
