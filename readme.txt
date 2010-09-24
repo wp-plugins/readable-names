@@ -1,6 +1,6 @@
 === Readable Names ===
 Contributors: Doktor Bro
-Tags: comments, discussion, grammar, language, readability, spam, Finnish, German, Hebrew, Icelandic, Persian, Russian
+Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
 Stable tag: 0.8
@@ -18,9 +18,10 @@ The plugin forces commenters to write their names in the language that your blog
 * Icelandic `is_IS` (by Hans Rúnar Snorrason)
 * Persian `fa_IR` (by [Alefba](http://alefba.us/))
 * Russian `ru_RU`
+You are welcome to translate the plugin in your language. No coding skills or extra software required! Post your translation in the [support forum](http://wordpress.org/tags/readable-names).
 
 = Support =
-Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored. The only supported location for support questions is [http://wordpress.org/tags/readable-names](http://wordpress.org/tags/readable-names).
+Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
 
 == Installation ==
 
