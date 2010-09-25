@@ -9,9 +9,12 @@ The plugin asks commenters to write their names in the language that your blog u
 
 == Description ==
 
-The plugin asks commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined language standards can create your own slang. Less spam is a welcome side effect.
+The plugin asks commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined rules can create your own slang. Less spam is a welcome side effect.
 
 = Translation =
+
+The plugin comes with a set of predefined standards for every translated language.
+
 * Finnish `fi` (by Christian Hellberg)
 * German `de_DE`
 * Hebrew `he_IL` (by [Yaron Shahrabani](https://edge.launchpad.net/~sh-yaron))
@@ -21,27 +24,26 @@ The plugin asks commenters to write their names in the language that your blog u
 
 † *incomplete*
 
-= Support =
-Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
-
 == Installation ==
 
-1. Upload the `readable-names` folder to the `/wp-content/plugins/` directory
+1. Upload the `readable-names` folder to the `/wp-content/plugins/` directory.
 or download through the “Plugins” menu in WordPress.
 1. Activate the plugin through the “Plugins” menu in WordPress.
 1. Look for the “Settings” link to configure the options.
-1. Make your own rules on the option page.
+1. Make your own definitions on the option page.
 1. Give visitors a hint about your rules.
 
 == Frequently Asked Questions ==
 
+Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
+
 = How can I translate the plugin in my native language? =
 
-Download the [developement version](http://downloads.wordpress.org/plugin/readable-names.zip). In there you will find the file `readable-names.pot`. Translate it with “[Poedit](http://www.poedit.net/)”. Contact me through the [support forum](http://wordpress.org/tags/readable-names). 
+Download the [development version](http://downloads.wordpress.org/plugin/readable-names.zip). In there you will find the file `readable-names.pot`. Translate it with “[Poedit](http://www.poedit.net/)”. Contact me through the [support forum](http://wordpress.org/tags/readable-names). 
 
-= If my commenter's are coming from all over the world, they have the right to write their names as they want. Even if this is a foreign language. What is the value of the plugin? =
+= What is the value of the plugin? =
 
-You cannot read foreign alphabet characters. “Доктор Бро” is just not readable for you, if you don't know Russian. If strangers want to leave comments on *your blog*, they have to speak *your language*. The commenter is always a guest.
+You cannot read foreign alphabet characters. “Доктор Бро” is just not readable for you, if you don't know Russian. Strangers who want to leave comments on *your* blog, have to speak *your* language. The commenter is always the guest.
 
 == Screenshots ==
 
@@ -71,16 +73,16 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 = 0.7 =
 * Add Hebrew translation (by Yaron Shahrabani)
 * Add Icelandic translation (by Hans Rúnar Snorrason)
-* Delete russian letters 'Ь' and 'Ъ' from the default settings 
+* Delete russian letters “Ь” and “Ъ” from the default settings 
 
 = 0.6.1 =
 * Fix a bug: not recognise the first letter of the alphabet
 
 = 0.6 =
 * Better error style
-* Added section 'Affected users' with options 'User' and 'Visitor' 
+* Added section “Affected users” with options “User” and “Visitor” 
 * Added the link to support forum
-* Removed option 'required_letters'
+* Removed option “required_letters”
 
 = 0.5.1 =
 * Change default multibyte encoding to UTF-8
@@ -126,3 +128,4 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 == Upgrade Notice ==
 
 If you upgrade, the existing configuration will remain *unchanged*.
+
