@@ -1,0 +1,190 @@
+# Translation of the WordPress plugin Readable Names 0.6 by Anatol Broder.
+# Copyright (C) 2010 Anatol Broder
+# This file is distributed under the same license as the Readable Names package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: Readable Names 0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
+"POT-Creation-Date: 2010-09-23 11:31+0000\n"
+"PO-Revision-Date: 2010-09-23 22:12+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Gezer (Hebrew)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: readable-names.php:93
+msgid "Error: The name is not readable"
+msgstr "שגיאה: השם אינו קריא"
+
+#: readable-names.php:150
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2"
+"$s”. Please only use these characters: “%3$s”."
+msgstr ""
+"<strong>שגיאה:</strong> השם “%1$s” מכיל את התו הלא חוקי: “%2$s”. נא להשתמש "
+"בתווים אלו בלבד: “%3$s”."
+
+#: readable-names.php:169
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %"
+"2$d characters long."
+msgstr ""
+"<strong>שגיאה:</strong> השם “%1$s” קצר מדי. עליו להיות בן %2$d תווים לפחות."
+
+#: readable-names.php:199
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%s” does not begin with a capital letter."
+msgstr "<strong>שגיאה:</strong> השם “%s” אינו מתחיל באות גדולה."
+
+#: readable-names.php:217
+#, php-format
+msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
+msgstr "<strong>שגיאה:</strong> בשם “%s” יש יותר מדי אותיות גדולות."
+
+#: readable-names.php:238
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%1$s” does not contain required vowels: “%2"
+"$s”."
+msgstr ""
+"<strong>שגיאה:</strong> השם “%1$s” אינו מכיל את אמות הקריאה הנדרשות: “%2$s”."
+
+#: readable-names.php:272 readable-names.php:282
+msgid "Readable Names Settings"
+msgstr "הגדרות שמות קריאים"
+
+#. #-#-#-#-#  plugin.pot (Readable Names 0.8)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: readable-names.php:273
+msgid "Readable Names"
+msgstr "שמות קריאים"
+
+#: readable-names.php:287
+msgid "Save Changes"
+msgstr "שמירת השינויים"
+
+#: readable-names.php:298
+msgid "Allowed characters"
+msgstr "תווים מותרים"
+
+#: readable-names.php:299
+msgid "Small letters"
+msgstr "אותיות קטנות"
+
+#: readable-names.php:300
+msgid "Capital letters"
+msgstr "אותיות גדולות"
+
+#: readable-names.php:301
+msgid "Digits"
+msgstr "ספרות"
+
+#: readable-names.php:304
+msgid "Grammar"
+msgstr "דקדוק"
+
+#: readable-names.php:305
+msgid "Minimum name length"
+msgstr "אורך השם המזערי"
+
+#: readable-names.php:306
+msgid "First character must be a capital letter"
+msgstr "על האות הראשונה להיות אות גדולה"
+
+#: readable-names.php:307
+msgid "One capital letter only"
+msgstr "מותר אות גדולה אחת בלבד"
+
+#: readable-names.php:308
+msgid "Required vowels"
+msgstr "אמות קריאה נדרשות"
+
+#: readable-names.php:311
+msgid "Affected roles"
+msgstr "תפקידים שיושפעו"
+
+#: readable-names.php:312
+msgid "Visitor"
+msgstr "מבקר"
+
+#: readable-names.php:313
+msgid "User"
+msgstr "אורח"
+
+#: readable-names.php:316
+msgid "Appearance"
+msgstr "מראה"
+
+#: readable-names.php:317
+msgid "Modify the comment form"
+msgstr "שינוי מבנה התגובה"
+
+#: readable-names.php:321
+msgid "Whitespace is always allowed."
+msgstr "תמיד מותר להשתמש ברווחים."
+
+#: readable-names.php:358
+msgid "Depending on allowed characters."
+msgstr "בהתאם לתווים המותרים."
+
+#: readable-names.php:369
+msgid "characters"
+msgstr "תווים"
+
+#: readable-names.php:404
+#, php-format
+msgid "Depending on <a href=\"%s\">discussion settings</a>."
+msgstr "בהתאם ל<a href=\"%s\">הגדרות הדיון</a>."
+
+#: readable-names.php:428
+#, php-format
+msgid "Depending on the <a href=\"%s\">current theme</a>."
+msgstr "בהתאם ל<a href=\"%s\">ערכת הנושא הנוכחית</a>."
+
+#: readable-names.php:439
+#, php-format
+msgid "“%1$s” instead of “%2$s”"
+msgstr "“%1$s” במקום “%2$s”"
+
+#: readable-names.php:439 readable-names.php:579
+msgid "Readable name"
+msgstr "שם קריא"
+
+#: readable-names.php:439
+msgid "Name"
+msgstr "שם"
+
+#: readable-names.php:558
+msgid "Settings"
+msgstr "הגדרות"
+
+#: readable-names.php:569
+msgid "Ask for help"
+msgstr "בקשה לעזרת"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/readable-names/"
+msgstr "http://wordpress.org/extend/plugins/readable-names/"
+
+#. Description of the plugin/theme
+msgid ""
+"The plugin forces commenters to write their names in the language that your "
+"blog uses."
+msgstr "התוסף מאלץ את המגיבים לכתוב את שמותיהם בשפה בה נעשה שימוש בבלוג שלך."
+
+#. Author of the plugin/theme
+msgid "Anatol Broder"
+msgstr "אנטול ברודר"
+
+#. Author URI of the plugin/theme
+msgid "http://doktorbro.net/"
+msgstr "http://doktorbro.net/"

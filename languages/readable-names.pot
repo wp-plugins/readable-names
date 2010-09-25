@@ -1,4 +1,4 @@
-# Translation of the WordPress plugin Readable Names 0.6 by Anatol Broder.
+# Translation of the WordPress plugin Readable Names 0.9.1 by Anatol Broder.
 # Copyright (C) 2010 Anatol Broder
 # This file is distributed under the same license as the Readable Names package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Readable Names 0.6\n"
+"Project-Id-Version: Readable Names 0.9.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
-"POT-Creation-Date: 2010-09-16 19:31+0000\n"
+"POT-Creation-Date: 2010-09-25 14:57+0000\n"
 "PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,112 +16,153 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: readable-names.php:89
+#: readable-names.php:99
 msgid "Error: The name is not readable"
 msgstr ""
 
-#: readable-names.php:143
+#: readable-names.php:156
 #, php-format
 msgid ""
 "<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2"
 "$s”. Please only use these characters: “%3$s”."
 msgstr ""
 
-#: readable-names.php:162
+#: readable-names.php:175
 #, php-format
 msgid ""
 "<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %"
 "2$d characters long."
 msgstr ""
 
-#: readable-names.php:192
+#: readable-names.php:205
 #, php-format
 msgid ""
 "<strong>Error:</strong> The name “%s” does not begin with a capital letter."
 msgstr ""
 
-#: readable-names.php:210
+#: readable-names.php:223
 #, php-format
 msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
 msgstr ""
 
-#: readable-names.php:247 readable-names.php:257
+#: readable-names.php:244
+#, php-format
+msgid ""
+"<strong>Error:</strong> The name “%1$s” does not contain required vowels: “%2"
+"$s”."
+msgstr ""
+
+#: readable-names.php:275 readable-names.php:285
 msgid "Readable Names Settings"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (Readable Names 0.6)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Readable Names 0.9.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: readable-names.php:248
+#: readable-names.php:276
 msgid "Readable Names"
 msgstr ""
 
-#: readable-names.php:262
+#: readable-names.php:290
 msgid "Save Changes"
 msgstr ""
 
-#: readable-names.php:273
+#: readable-names.php:301
 msgid "Allowed characters"
 msgstr ""
 
-#: readable-names.php:274
+#: readable-names.php:302
 msgid "Small letters"
 msgstr ""
 
-#: readable-names.php:275
+#: readable-names.php:303
 msgid "Capital letters"
 msgstr ""
 
-#: readable-names.php:276
+#: readable-names.php:304
 msgid "Digits"
 msgstr ""
 
-#: readable-names.php:279
+#: readable-names.php:307
 msgid "Grammar"
 msgstr ""
 
-#: readable-names.php:280
+#: readable-names.php:308
 msgid "Minimum name length"
 msgstr ""
 
-#: readable-names.php:281
+#: readable-names.php:309
 msgid "First character must be a capital letter"
 msgstr ""
 
-#: readable-names.php:282
+#: readable-names.php:310
 msgid "One capital letter only"
 msgstr ""
 
-#: readable-names.php:285
+#: readable-names.php:311
+msgid "Required vowels"
+msgstr ""
+
+#: readable-names.php:314
 msgid "Affected roles"
 msgstr ""
 
-#: readable-names.php:286
+#: readable-names.php:315
 msgid "Visitor"
 msgstr ""
 
-#: readable-names.php:287
+#: readable-names.php:316
 msgid "User"
 msgstr ""
 
-#: readable-names.php:291
+#: readable-names.php:319
+msgid "Appearance"
+msgstr ""
+
+#: readable-names.php:320
+msgid "Modify the comment form"
+msgstr ""
+
+#: readable-names.php:324
 msgid "Whitespace is always allowed."
 msgstr ""
 
-#: readable-names.php:328
+#: readable-names.php:361
 msgid "Depending on allowed characters."
 msgstr ""
 
-#: readable-names.php:339
+#: readable-names.php:372
 msgid "characters"
 msgstr ""
 
-#: readable-names.php:363
+#: readable-names.php:407
 #, php-format
 msgid "Depending on <a href=\"%s\">discussion settings</a>."
 msgstr ""
 
-#: readable-names.php:483
+#: readable-names.php:431
+#, php-format
+msgid "Depending on the <a href=\"%s\">current theme</a>."
+msgstr ""
+
+#: readable-names.php:442
+#, php-format
+msgid "“%1$s” instead of “%2$s”"
+msgstr ""
+
+#: readable-names.php:442 readable-names.php:586
+msgid "Readable name"
+msgstr ""
+
+#: readable-names.php:442
+msgid "Name"
+msgstr ""
+
+#: readable-names.php:566
 msgid "Settings"
+msgstr ""
+
+#: readable-names.php:576
+msgid "Ask for help"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -130,7 +171,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"The plugin forces commenters to write their names in the language that your "
+"The plugin asks commenters to write their names in the language that your "
 "blog uses."
 msgstr ""
 
