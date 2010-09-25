@@ -1,40 +1,86 @@
 === Readable Names ===
-Contributors: doktor-bro
-Tags: comments, usability, etiquette, spam
+Contributors: doktorbro
+Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.5.1
+Stable tag: 0.9.2
 
-The plugin forces commenters to write their names in the language that your blog uses.
+The plugin asks commenters to write their names in the language that your blog uses.
 
 == Description ==
 
-The plugin forces commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined language standards can create your own slang. Less spam is a welcome side effect.
+The plugin asks commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined language standards can create your own slang. Less spam is a welcome side effect.
 
-= Predefined languages =
-* English
-* German
-* Persian (by [Alefba](http://alefba.us/))
-* Russian
+= Translation =
+* Finnish `fi` (by Christian Hellberg)
+* German `de_DE`
+* Hebrew `he_IL` (by [Yaron Shahrabani](https://edge.launchpad.net/~sh-yaron))
+* Icelandic `is_IS` (by Hans Rúnar Snorrason) †
+* Persian `fa_IR` (by [Alefba](http://alefba.us/)) †
+* Russian `ru_RU`
+
+† *incomplete*
 
 = Support =
-Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored. The only supported location for support questions is [http://wordpress.org/tags/readable-names](http://wordpress.org/tags/readable-names).
+Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
 
 == Installation ==
 
 1. Upload the `readable-names` folder to the `/wp-content/plugins/` directory
-or download through the 'Plugins' menu in WordPress.
-1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Look for the 'Settings' link to configure the options.
+or download through the “Plugins” menu in WordPress.
+1. Activate the plugin through the “Plugins” menu in WordPress.
+1. Look for the “Settings” link to configure the options.
 1. Make your own rules on the option page.
+1. Give visitors a hint about your rules.
+
+== Frequently Asked Questions ==
+
+= How can I translate the plugin in my native language? =
+
+Download the [developement version](http://downloads.wordpress.org/plugin/readable-names.zip). In there you will find the file `readable-names.pot`. Translate it with “[Poedit](http://www.poedit.net/)”. Contact me through the [support forum](http://wordpress.org/tags/readable-names). 
+
+= If my commenter's are coming from all over the world, they have the right to write their names as they want. Even if this is a foreign language. What is the value of the plugin? =
+
+You cannot read foreign alphabet characters. “Доктор Бро” is just not readable for you, if you don't know Russian. If strangers want to leave comments on *your blog*, they have to speak *your language*. The commenter is always a guest.
 
 == Screenshots ==
 
 1. The admin option page is clear.
 
-2. The error messages are user friendly.
+2. The comment form gives a decent hint.
+
+3. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.9.2 =
+* Add “Frequently Asked Questions” section
+* Add “Upgrade Notice” section
+
+= 0.9.1 =
+* Fix Russian typo
+
+= 0.9 =
+* Add option “Required vowels”
+* Add option “Modify the comment form”
+
+= 0.8 =
+* Add Finnish translation (by Christian Hellberg)
+* Change Hebrew defaults
+
+= 0.7 =
+* Add Hebrew translation (by Yaron Shahrabani)
+* Add Icelandic translation (by Hans Rúnar Snorrason)
+* Delete russian letters 'Ь' and 'Ъ' from the default settings 
+
+= 0.6.1 =
+* Fix a bug: not recognise the first letter of the alphabet
+
+= 0.6 =
+* Better error style
+* Added section 'Affected users' with options 'User' and 'Visitor' 
+* Added the link to support forum
+* Removed option 'required_letters'
 
 = 0.5.1 =
 * Change default multibyte encoding to UTF-8
@@ -77,3 +123,6 @@ or download through the 'Plugins' menu in WordPress.
 = 0.1 =
 * Initial version
 
+== Upgrade Notice ==
+
+If you upgrade, the existing configuration will remain *unchanged*.
