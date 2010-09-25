@@ -3,7 +3,7 @@ Contributors: doktorbro
 Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 
 The plugin asks commenters to write their names in the language that your blog uses.
 
@@ -54,6 +54,9 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 3. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.9.3 =
+* Fix typos in `readme.txt`
 
 = 0.9.2 =
 * Add “Frequently Asked Questions” section
