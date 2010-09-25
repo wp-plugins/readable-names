@@ -5,11 +5,11 @@ Requires at least: 3.0
 Tested up to: 3.0.1
 Stable tag: 0.9.1
 
-The plugin forces commenters to write their names in the language that your blog uses.
+The plugin asks commenters to write their names in the language that your blog uses.
 
 == Description ==
 
-The plugin forces commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined language standards can create your own slang. Less spam is a welcome side effect.
+The plugin asks commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined language standards can create your own slang. Less spam is a welcome side effect.
 
 = Translation =
 * Finnish `fi` (by Christian Hellberg)
