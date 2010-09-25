@@ -1,5 +1,5 @@
 === Readable Names ===
-Contributors: Doktor Bro
+Contributors: doktorbro
 Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
