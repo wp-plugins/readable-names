@@ -15,11 +15,11 @@ The plugin asks commenters to write their names in the language that your blog u
 * Finnish `fi` (by Christian Hellberg)
 * German `de_DE`
 * Hebrew `he_IL` (by [Yaron Shahrabani](https://edge.launchpad.net/~sh-yaron))
-* Icelandic `is_IS` (by Hans Rúnar Snorrason)
-* Persian `fa_IR` (by [Alefba](http://alefba.us/))
+* Icelandic `is_IS` (by Hans Rúnar Snorrason) †
+* Persian `fa_IR` (by [Alefba](http://alefba.us/)) †
 * Russian `ru_RU`
 
-You are welcome to translate the plugin in your language. No coding skills or extra software required! Post your translation in the [support forum](http://wordpress.org/tags/readable-names).
+† *incomplete*
 
 = Support =
 Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
@@ -33,6 +33,16 @@ or download through the “Plugins” menu in WordPress.
 1. Make your own rules on the option page.
 1. Give visitors a hint about your rules.
 
+== Frequently Asked Questions ==
+
+= How can I translate the plugin in my native language? =
+
+Download the [developement version](http://downloads.wordpress.org/plugin/readable-names.zip). In there you will find the file `readable-names.pot`. Translate it with “[Poedit](http://www.poedit.net/)”. Contact me through the [support forum](http://wordpress.org/tags/readable-names). 
+
+= If my commenter's are coming from all over the world, they have the right to write their names as they want. Even if this is a foreign language. What is the value of the plugin? =
+
+You cannot read foreign alphabet characters. “Доктор Бро” is just not readable for you, if you don't know Russian. If strangers want to leave comments on *your blog*, they have to speak *your language*. The commenter is always a guest.
+
 == Screenshots ==
 
 1. The admin option page is clear.
@@ -42,6 +52,10 @@ or download through the “Plugins” menu in WordPress.
 3. The error messages are user friendly.
 
 == Changelog ==
+
+= 0.9.2 =
+* Add “Frequently Asked Questions” section
+* Add “Upgrade Notice” section
 
 = 0.9.1 =
 * Fix Russian typo
@@ -109,3 +123,6 @@ or download through the “Plugins” menu in WordPress.
 = 0.1 =
 * Initial version
 
+== Upgrade Notice ==
+
+If you upgrade, the existing configuration will remain *unchanged*.
