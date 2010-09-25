@@ -8,7 +8,7 @@ Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
 Text Domain: readable_names
-Domain Path: /languages/
+Domain Path: /languages
 */
 
 if ( ! function_exists( 'is_admin' ) ) {
@@ -20,14 +20,14 @@ if ( ! function_exists( 'is_admin' ) ) {
 class Readable_Names {
 
 	function Readable_Names() {
-		// activation, deactivation and uninstall
+		// activate, deactivate and uninstall
 		register_activation_hook( __FILE__, array( $this, 'plugin_activation' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'plugin_deactivation' ) );
 		register_uninstall_hook( __FILE__, array( $this, 'plugin_uninstall' ) );
 		
-		// add actions
 		// load text domain
 		add_action( 'init', array( $this, 'plugin_init' ) );
+		
 		// frontend
 		if ( $this->options_field( 'check_visitor' ) ) {
 			add_action( 'pre_comment_on_post', array( $this, 'check_comment_author' ) );
@@ -38,6 +38,7 @@ class Readable_Names {
 		if ( $this->options_field( 'check_user' ) ) {
 			add_action( 'user_profile_update_errors', array( $this, 'check_user_profile' ), 1, 3 );
 		}
+		
 		// backend
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'call_add_options_page' ) );
