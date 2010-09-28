@@ -47,11 +47,14 @@ The plugin comes with a set of predefined standards for every translated languag
 
 == Frequently Asked Questions ==
 
-Please use the Readable Names [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
+Please use the “Readable Names” [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
 
 = How can I translate the plugin in my native language? =
 
-Download the [development version](http://downloads.wordpress.org/plugin/readable-names.zip). In there you will find the file `readable-names.pot`. Translate it with “[Poedit](http://www.poedit.net/)”. Contact me through the [support forum](http://wordpress.org/tags/readable-names). 
+* Download the [development version](http://downloads.wordpress.org/plugin/readable-names.zip).
+* Find the file `readable-names.pot` inside the subfolder `languages`.
+* Translate it with “[Poedit](http://www.poedit.net/)”.
+* Contact me through the dedicated [support forum](http://wordpress.org/tags/readable-names). 
 
 = Why should I forbid the use of any foreign alphabet? =
 
