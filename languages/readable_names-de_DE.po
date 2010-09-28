@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Readable Names 0.6\n"
+"Project-Id-Version: Readable Names 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
-"POT-Creation-Date: 2010-09-25 14:57+0000\n"
+"POT-Creation-Date: 2010-09-28 14:38+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Anatol Broder <bro@doktorbro.net>\n"
 "Language-Team: Anatol Broder <bro@doktorbro.net>\n"
@@ -13,161 +13,168 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Country: GERMANY\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
 "X-Poedit-Basepath: /home/svn/readable-names/trunk\n"
 "X-Poedit-SearchPath-0: /home/svn/readable-names/trunk\n"
 
-#: readable-names.php:99
+#: readable-names.php:107
 msgid "Error: The name is not readable"
 msgstr "Fehler: Der Name ist nicht lesbar"
 
-#: readable-names.php:156
+#: readable-names.php:165
 #, php-format
 msgid "<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”."
 msgstr "<strong>Fehler:</strong> Der Name »%1$s«; enthält ein unzulässiges Zeichen »;%2$s«. Bitte nur diese Zeichen verwenden: »%3$s«."
 
-#: readable-names.php:175
+#: readable-names.php:184
 #, php-format
 msgid "<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %2$d characters long."
 msgstr "<strong>Fehler:</strong> Der Name »%1$s« ist zu kurz. Er sollte mindestens %2$d Zeichen lang sein."
 
-#: readable-names.php:205
+#: readable-names.php:214
 #, php-format
 msgid "<strong>Error:</strong> The name “%s” does not begin with a capital letter."
 msgstr "<strong>Fehler:</strong> Der Name »%s« beginnt nicht mit einem Großbuchstaben."
 
-#: readable-names.php:223
+#: readable-names.php:232
 #, php-format
 msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
 msgstr "<strong>Fehler:</strong> Der Name »%s« enthält zu viele Großbuchstaben."
 
-#: readable-names.php:244
+#: readable-names.php:253
 #, php-format
 msgid "<strong>Error:</strong> The name “%1$s” does not contain required vowels: “%2$s”."
 msgstr "<strong>Fehler:</strong> Der Name »%1$s« enthält nicht die erforderlichen Vokale: »%2$s«."
 
-#: readable-names.php:275
-#: readable-names.php:285
+#: readable-names.php:284
+#: readable-names.php:294
+#: readable-names.php:607
 msgid "Readable Names Settings"
 msgstr "Einstellungen für lesbare Namen"
 
-#. #-#-#-#-#  plugin.pot (Readable Names 0.9.1)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Readable Names 0.9.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: readable-names.php:276
+#: readable-names.php:285
 msgid "Readable Names"
 msgstr "Lesbare Namen"
 
-#: readable-names.php:290
+#: readable-names.php:299
 msgid "Save Changes"
 msgstr ""
 
-#: readable-names.php:301
+#: readable-names.php:310
 msgid "Allowed characters"
 msgstr "Erlaubte Zeichen"
 
-#: readable-names.php:302
+#: readable-names.php:311
 msgid "Small letters"
 msgstr "Kleinbuchstaben"
 
-#: readable-names.php:303
+#: readable-names.php:312
 msgid "Capital letters"
 msgstr "Großbuchstaben"
 
-#: readable-names.php:304
+#: readable-names.php:313
 msgid "Digits"
 msgstr "Ziffern"
 
-#: readable-names.php:307
+#: readable-names.php:316
 msgid "Grammar"
 msgstr "Grammatik"
 
-#: readable-names.php:308
+#: readable-names.php:317
 msgid "Minimum name length"
 msgstr "Mindestlänge des Namens"
 
-#: readable-names.php:309
+#: readable-names.php:318
 msgid "First character must be a capital letter"
 msgstr "Der erste Buchstabe muss ein Großbuchstabe sein"
 
-#: readable-names.php:310
+#: readable-names.php:319
 msgid "One capital letter only"
 msgstr "Nur ein Großbuchstabe"
 
-#: readable-names.php:311
+#: readable-names.php:320
 msgid "Required vowels"
 msgstr "Erforderliche Vokale"
 
-#: readable-names.php:314
+#: readable-names.php:323
 msgid "Affected roles"
 msgstr "Betroffene Rollen"
 
-#: readable-names.php:315
+#: readable-names.php:324
 msgid "Visitor"
 msgstr "Besucher"
 
-#: readable-names.php:316
+#: readable-names.php:325
 msgid "User"
 msgstr "Benutzer"
 
-#: readable-names.php:319
+#: readable-names.php:328
 msgid "Appearance"
 msgstr ""
 
-#: readable-names.php:320
+#: readable-names.php:329
 msgid "Modify the comment form"
 msgstr "Das Kommentarformular anpassen"
 
-#: readable-names.php:324
+#: readable-names.php:333
 msgid "Whitespace is always allowed."
 msgstr "Das Leerzeichen ist immer erlaubt."
 
-#: readable-names.php:361
+#: readable-names.php:370
 msgid "Depending on allowed characters."
 msgstr "In Abhängigkeit von den erlaubten Zeichen."
 
-#: readable-names.php:372
+#: readable-names.php:381
 msgid "characters"
 msgstr "Zeichen"
 
-#: readable-names.php:407
+#: readable-names.php:416
 #, php-format
 msgid "Depending on <a href=\"%s\">discussion settings</a>."
 msgstr "In Abhängigkeit von den <a href=\"%s\">Einstellungen für die Diskussion</a>."
 
-#: readable-names.php:431
+#: readable-names.php:440
 #, php-format
 msgid "Depending on the <a href=\"%s\">current theme</a>."
 msgstr "In Abhängigkeit von dem <a href=\"%s\">aktuellen Theme</a>."
 
-#: readable-names.php:442
+#: readable-names.php:451
 #, php-format
 msgid "“%1$s” instead of “%2$s”"
 msgstr "»%1$s« statt »%2$s«"
 
-#: readable-names.php:442
-#: readable-names.php:586
+#: readable-names.php:451
+#: readable-names.php:598
 msgid "Readable name"
 msgstr "Lesbarer Name"
 
-#: readable-names.php:442
+#: readable-names.php:451
 msgid "Name"
 msgstr ""
 
-#: readable-names.php:566
+#: readable-names.php:578
 msgid "Settings"
 msgstr ""
 
-#: readable-names.php:576
+#: readable-names.php:588
 msgid "Ask for help"
 msgstr "Um Hilfe bitten"
+
+#: readable-names.php:604
+msgid "Unreadable attempt"
+msgid_plural "Unreadable attempts"
+msgstr[0] "Unlesbarer Versuch"
+msgstr[1] "Unlesbare Versuche"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/readable-names/"
 msgstr "http://wordpress.org/extend/plugins/readable-names/"
 
 #. Description of the plugin/theme
-msgid "The plugin asks commenters to write their names in the language that your blog uses."
-msgstr "Das Plugin bittet kommentierende Gäste, ihren Namen in der Sprache des Blogs zu schreiben."
+msgid "Asks commenters to write their names in the language that your blog uses."
+msgstr "Bittet kommentierende Gäste, ihren Namen in der Sprache des Blogs zu schreiben."
 
 #. Author of the plugin/theme
 msgid "Anatol Broder"
