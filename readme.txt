@@ -5,13 +5,17 @@ Requires at least: 3.0
 Tested up to: 3.0.1
 Stable tag: 0.9.3
 
-The plugin asks commenters to write their names in the language that your blog uses.
+Asks commenters to write their names in the language that your blog uses.
 
 == Description ==
 
-The plugin asks commenters to write their names in the language that your blog uses. Using names written in your blog's native language will enhance the quality of users' conversation. Customizing predefined rules can create your own slang. Less spam is a welcome side effect.
+This plugin asks commenters to write their names in the language that your blog uses. Using readable names written in your blog's native language will enhance the discussion. Strangers who want to leave comments on *your* blog, have to speak *your* language.
 
-= Translation =
+Customizing predefined rules can create your own slang.
+
+Less spam is a welcome side effect on non-latin alphabets.
+
+= Translations =
 
 The plugin comes with a set of predefined standards for every translated language.
 
@@ -24,10 +28,18 @@ The plugin comes with a set of predefined standards for every translated languag
 
 † *incomplete*
 
+= Technical Specifications =
+
+* very lightweight
+* fully UTF-8 compatible
+* secure input validation
+* smooth upgrade procedure
+* no extra data in the database
+* restless deinstallation
+
 == Installation ==
 
-1. Upload the `readable-names` folder to the `/wp-content/plugins/` directory.
-or download through the “Plugins” menu in WordPress.
+1. Upload the `readable-names` folder to the `/wp-content/plugins/` directory or download through the “Plugins” menu in WordPress.
 1. Activate the plugin through the “Plugins” menu in WordPress.
 1. Look for the “Settings” link to configure the options.
 1. Make your own definitions on the option page.
@@ -41,9 +53,9 @@ Please use the Readable Names [support forum](http://wordpress.org/tags/readable
 
 Download the [development version](http://downloads.wordpress.org/plugin/readable-names.zip). In there you will find the file `readable-names.pot`. Translate it with “[Poedit](http://www.poedit.net/)”. Contact me through the [support forum](http://wordpress.org/tags/readable-names). 
 
-= What is the value of the plugin? =
+= Why should I forbid the use of any foreign alphabet? =
 
-You cannot read foreign alphabet characters. “Доктор Бро” is just not readable for you, if you don't know Russian. Strangers who want to leave comments on *your* blog, have to speak *your* language. The commenter is always the guest.
+You cannot read foreign alphabet characters. “Доктор Бро” is just not readable for you, if you don't speak Russian.
 
 == Screenshots ==
 
@@ -52,6 +64,28 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 2. The comment form gives a decent hint.
 
 3. The error messages are user friendly.
+
+4. The count of unreadable attempts is displayed on the dashboard.
+
+== Upgrade ==
+
+Any *previous* settings should be *retained*. Some *new* options will be set to *default* settings.
+
+== Roadmap ==
+
+= 1.1 =
+
+* Add option “hyphen” to allowed charachters
+
+= 1.2 =
+
+* Add option “full stop” to allowed charachters
+
+== Upgrade Notice ==
+
+= 0.9 =
+
+Please, configure the new option “Required vowels” after the upgrade.
 
 == Changelog ==
 
@@ -76,7 +110,7 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 = 0.7 =
 * Add Hebrew translation (by Yaron Shahrabani)
 * Add Icelandic translation (by Hans Rúnar Snorrason)
-* Delete russian letters “Ь” and “Ъ” from the default settings 
+* Delete Russian letters “Ь” and “Ъ” from the default settings 
 
 = 0.6.1 =
 * Fix a bug: not recognise the first letter of the alphabet
@@ -102,10 +136,10 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 * Add text domain to error messages
 
 = 0.4.1 =
-* Typo in german and russian translation
+* Typo in German and Russian translation
 
 = 0.4 =
-* Add german translation
+* Add German translation
 * Change the plugin description
 
 = 0.3.2 =
@@ -116,19 +150,14 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 * Change description
 
 = 0.3 =
-* Add russian translation
+* Add Russian translation
 
 = 0.2 =
 * Add screenshots
 * Change plugin author name
 
 = 0.1.1 =
-* Add contributors to readme.txt
+* Add contributors to `readme.txt`
 
 = 0.1 =
 * Initial version
-
-== Upgrade Notice ==
-
-If you upgrade, the existing configuration will remain *unchanged*.
-
