@@ -13,7 +13,7 @@ This plugin asks commenters to write their names in the language that your blog 
 
 Customizing predefined rules can create your own slang.
 
-Less spam is a welcome side effect on non-latin alphabets.
+Less spam is a welcome side effect on non-Latin alphabets.
 
 = Translations =
 
