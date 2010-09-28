@@ -31,6 +31,7 @@ class Readable_Names {
 		// frontend
 		if ( $this->options_field( 'check_visitor' ) ) {
 			add_action( 'pre_comment_on_post', array( $this, 'check_comment_author' ) );
+			add_action( 'right_now_discussion_table_end', array( $this, 'add_discussion_table_end' ) );
 			if ( $this->options_field( 'modify_comment_form' ) ) { 
 				add_filter( 'comment_form_field_author', array ( $this, 'modify_form_author_label' ) );
 			}
@@ -86,6 +87,12 @@ class Readable_Names {
 			return false;
 	}
 	
+	function increase_unreadable_visitor_count() {
+		$options = get_option( 'readable_names' );
+		$options[ 'unreadable_visitor_count' ] += 1;
+		update_option( 'readable_names', $options );
+	}
+	
 	function check_comment_author( $comment_post_ID ) {
 		if ( is_user_logged_in() )
 			return;
@@ -95,9 +102,11 @@ class Readable_Names {
 			return;
 		
 		$result = $this->check_full_name( $comment_author );
-		if ( $result )
+		if ( $result ) {
+			$this->increase_unreadable_visitor_count();
 			wp_die( $result, __( 'Error: The name is not readable', 'readable_names' ) . ' | ' . get_bloginfo ( 'name' ), 
 				array( 'response' => 500, 'back_link' => true ) );
+		}
 	}
 
 	function check_full_name( $full_name ) {
@@ -317,7 +326,7 @@ class Readable_Names {
 		
 		// section "Appearance" with id="section_appearance"
 		add_settings_section( 'section_appearance', __( 'Appearance' ), array( $this, 'admin_section_appearance_text' ), 'readable_names' );
-		add_settings_field( 'modify_comment_form',  __( 'Modify the comment form', 'readable_names' ), array( $this, 'admin_modify_comment_form' ), 'readable_names', 'section_appearance' );
+		add_settings_field( 'modify_comment_form',  __( 'Modify the comment form', 'readable_names' ), array( $this, 'admin_modify_comment_form' ), 'readable_names', 'section_appearance' );		
 	}
 	
 	function admin_section_characters_text() {
@@ -378,7 +387,7 @@ class Readable_Names {
 			name="<?php echo 'readable_names'; ?>[first_letter_capital]" 
 			type="checkbox"
 			value="1" 
-			<?php checked( '1', $this->options_field( 'first_letter_capital' ) ) ?>
+			<?php checked( '1', $this->options_field( 'first_letter_capital' ) ); ?>
 		/>
 	<?php }
 
@@ -388,7 +397,7 @@ class Readable_Names {
 			name="<?php echo 'readable_names'; ?>[one_capital_letter_only]" 
 			type="checkbox"
 			value="1" 
-			<?php checked( '1', $this->options_field( 'one_capital_letter_only' ) ) ?>
+			<?php checked( '1', $this->options_field( 'one_capital_letter_only' ) ); ?>
 		/>
 	<?php }
 	
@@ -413,17 +422,17 @@ class Readable_Names {
 			name="<?php echo 'readable_names'; ?>[check_visitor]" 
 			type="checkbox"
 			value="1" 
-			<?php checked( '1', $this->options_field( 'check_visitor' ) ) ?>
+			<?php checked( '1', $this->options_field( 'check_visitor' ) ); ?>
 		/>
 	<?php }
-	
+		
 	function admin_check_user() { ?>
 		<input
 			id="check_user" 
 			name="<?php echo 'readable_names'; ?>[check_user]" 
 			type="checkbox"
 			value="1" 
-			<?php checked( '1', $this->options_field( 'check_user' ) ) ?>
+			<?php checked( '1', $this->options_field( 'check_user' ) ); ?>
 		/>
 	<?php }
 	
@@ -437,7 +446,7 @@ class Readable_Names {
 			name="<?php echo 'readable_names'; ?>[modify_comment_form]" 
 			type="checkbox"
 			value="1" 
-			<?php checked( '1', $this->options_field( 'modify_comment_form' ) ) ?>
+			<?php checked( '1', $this->options_field( 'modify_comment_form' ) ); ?>
 		/>
 		<span class="description"><?php printf( __( '“%1$s” instead of “%2$s”', 'readable_names' ), __( 'Readable name', 'readable_names' ), __( 'Name' ) ); ?></span>
 	<?php }
@@ -503,6 +512,7 @@ class Readable_Names {
 	function options_default() {
 		// default (English)
 		$options = array(
+			// language
 			'allowed_small_letters' => 'abcdefghijklmnopqrstuvwxyz',
 			'allowed_capital_letters' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			'allowed_digits' => '',
@@ -510,9 +520,11 @@ class Readable_Names {
 			'first_letter_capital' => true,
 			'one_capital_letter_only' => true,
 			'required_vowels' => 'aeiouyAEIOUY',
+			// administration
 			'check_visitor' => true,
 			'check_user' => true,
-			'modify_comment_form' => true
+			'modify_comment_form' => true,
+			'unreadable_visitor_count' => 0
 		);
 		$locale = get_locale();
 		// Finnish
@@ -586,6 +598,21 @@ class Readable_Names {
 		echo '<p class="comment-form-author">' . '<label for="author">' . __( 'Readable name', 'readable_names' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
 	}
 	
+	function add_discussion_table_end() {
+		$unreadable = $this->options_field( 'unreadable_visitor_count' );
+		$num = '<span class="unreadable-count">' . number_format_i18n( $unreadable ) . '</span>';
+		$text = _n( 'Unreadable attempt', 'Unreadable attempts', $unreadable, 'readable_names' );
+		if ( current_user_can( 'manage_options' ) ) {
+			$link = admin_url( 'options-general.php?page=readable_names' );
+			$title = __( 'Readable Names Settings', 'readable_names' );
+			$num = "<a href='$link' title='$title'>$num</a>";
+			$text = "<a class='unreadable' href='$link' title='$title'>$text</a>";
+		}
+		echo '<tr>';
+		echo '<td class="b b-unreadable">' . $num . '</td>';
+		echo '<td class="last t">' . $text . '</td>';
+		echo '</tr>';
+	}
 }	
 	
 $GLOBALS[ 'Readable_Names' ] = new Readable_Names();
