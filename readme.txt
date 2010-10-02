@@ -62,13 +62,15 @@ You cannot read foreign alphabet characters. “Доктор Бро” is just n
 
 == Screenshots ==
 
-1. The admin option page is clear.
+1. The comment form gives a decent hint.
 
-2. The comment form gives a decent hint.
+2. The error messages are user friendly.
 
-3. The error messages are user friendly.
+3. The count of unreadable attempts is displayed on the dashboard.
 
-4. The count of unreadable attempts is displayed on the dashboard.
+4. The admin option page is clear.
+
+5. The plugin has been translated even into Russian.
 
 == Upgrade ==
 
