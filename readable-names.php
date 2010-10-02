@@ -566,6 +566,7 @@ class Readable_Names {
 		elseif ( 'ru_RU' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 			$options[ 'allowed_capital_letters' ] = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЭЮЯ';
+			$options[ 'minimum_name_length' ] = 3;
 			$options[ 'required_vowels' ] = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ';
 		}
 		return $options;
