@@ -522,7 +522,7 @@ class Readable_Names {
 			'required_vowels' => 'aeiouyAEIOUY',
 			// administration
 			'check_visitor' => true,
-			'check_user' => true,
+			'check_user' => false,
 			'modify_comment_form' => true,
 			'unreadable_visitor_count' => 0
 		);
