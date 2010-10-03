@@ -3,7 +3,7 @@ Contributors: doktorbro
 Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 0.9.3
+Stable tag: 1.0
 
 Asks commenters to write their names in the language that your blog uses.
 
@@ -93,6 +93,11 @@ Any *previous* settings should be *retained*. Some *new* options will be set to 
 Please, configure the new option “Required vowels” after the upgrade.
 
 == Changelog ==
+
+= 1.0 =
+* Display count of unreadable attempts on the dashboard
+* Change default option “User” to false
+* Improve memory usage
 
 = 0.9.3 =
 * Fix typos in `readme.txt`
