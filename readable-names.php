@@ -29,7 +29,7 @@ class Readable_Names {
 		add_action( 'init', array( $this, 'plugin_init' ) );
 		
 		// frontend
-		if ( $this->options_field( 'check_visitor' ) ) {
+		if ( ( get_option( 'require_name_email' ) ) && ( ! get_option( 'comment_registration' ) ) && ( $this->options_field( 'check_visitor' ) ) ) {
 			add_action( 'pre_comment_on_post', array( $this, 'check_comment_author' ) );
 			add_action( 'right_now_discussion_table_end', array( $this, 'add_discussion_table_end' ) );
 			if ( $this->options_field( 'modify_comment_form' ) ) { 
@@ -453,7 +453,7 @@ class Readable_Names {
 	
 	function options_validate($options) {
 		$valid_options = $options;
-
+		
 		// validate allowed characters
 		$valid_options[ 'allowed_small_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_small_letters' ] );
 		$valid_options[ 'allowed_capital_letters' ] = $this->admin_validate_input_letters( $valid_options[ 'allowed_capital_letters' ] );
@@ -465,7 +465,10 @@ class Readable_Names {
 		// minimum name length must be between 1 and 3
 		$valid_options[ 'minimum_name_length' ] = absint( $valid_options[ 'minimum_name_length' ] );
 		$valid_options[ 'minimum_name_length' ] = max( 1, min( 3, $valid_options[ 'minimum_name_length' ] ) );
-		
+
+		// reset statistics
+		$valid_options[ 'unreadable_visitor_count' ] = 0;
+
 		return $valid_options;
 	}
 	
@@ -524,6 +527,7 @@ class Readable_Names {
 			'check_visitor' => true,
 			'check_user' => false,
 			'modify_comment_form' => true,
+			// statistics
 			'unreadable_visitor_count' => 0
 		);
 		$locale = get_locale();
