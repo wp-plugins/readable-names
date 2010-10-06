@@ -47,18 +47,28 @@ The plugin comes with a set of predefined standards for every translated languag
 
 == Frequently Asked Questions ==
 
-Please use the “Readable Names” [support forum](http://wordpress.org/tags/readable-names) for problems or questions with this plugin. Support questions by email will be ignored.
+Please use the [support forum](http://wordpress.org/tags/readable-names)
+for problems or questions with this plugin. “Readable Names” topics must be
+tagged with `readable-names`.
+
+Support questions by email will be ignored.
 
 = How can I translate the plugin in my native language? =
 
 * Download the [development version](http://downloads.wordpress.org/plugin/readable-names.zip).
 * Find the file `readable-names.pot` inside the subfolder `languages`.
-* Translate it with “[Poedit](http://www.poedit.net/)”.
+* Translate it with free editor “[Poedit](http://www.poedit.net/)”.
 * Contact me through the dedicated [support forum](http://wordpress.org/tags/readable-names). 
 
 = Why should I forbid the use of any foreign alphabet? =
 
-You cannot read foreign alphabet characters. “Доктор Бро” is just not readable for you, if you don't speak Russian.
+You cannot read foreign alphabet characters. “Доктор Бро” is just not readable
+for you, if you don't speak Russian. Other commenters don't expect
+foreign alphabets on your site at all.
+
+= Could it happen that ordinary comments get lost? =
+
+No, it's impossible. Comments with ordinary names pass through without any side effect.
 
 == Screenshots ==
 
@@ -80,11 +90,11 @@ Any *previous* settings should be *retained*. Some *new* options will be set to 
 
 = 1.1 =
 
-* Add option “hyphen” to allowed charachters
+* Add option “hyphen” to allowed characters
 
 = 1.2 =
 
-* Add option “full stop” to allowed charachters
+* Add option “full stop” to allowed characters
 
 == Upgrade Notice ==
 
