@@ -57,7 +57,7 @@ Support questions by email will be ignored.
 
 * Download the [development version](http://downloads.wordpress.org/plugin/readable-names.zip).
 * Find the file `readable-names.pot` inside the subfolder `languages`.
-* Translate it with free editor “[Poedit](http://www.poedit.net/)”.
+* Translate it with the free editor “[Poedit](http://www.poedit.net/)”.
 * Contact me through the dedicated [support forum](http://wordpress.org/tags/readable-names). 
 
 = Why should I forbid the use of any foreign alphabet? =
