@@ -1,0 +1,183 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Readable Names\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/readable-names\n"
+"POT-Creation-Date: 2010-09-28 14:38+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Anatol Broder <bro@doktorbro.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: readable-names.php:107
+msgid "Error: The name is not readable"
+msgstr "Грешка: Името не е четимо"
+
+#: readable-names.php:165
+#, php-format
+msgid "<strong>Error:</strong> The name “%1$s” contains an invalid character: “%2$s”. Please only use these characters: “%3$s”."
+msgstr "<strong>Грешка:</strong> Името „%1$s“ съдържа непозволен знак: „%2$s“. Моля използвайте само позволените знаци като: „%3$s“."
+
+#: readable-names.php:184
+#, php-format
+msgid "<strong>Error:</strong> The name “%1$s” is too short. It has to be at least %2$d characters long."
+msgstr "<strong>Грешка:</strong> Името „%1$s“ е много късо. То трябва да състои поне от %2$d букви."
+
+#: readable-names.php:214
+#, php-format
+msgid "<strong>Error:</strong> The name “%s” does not begin with a capital letter."
+msgstr "<strong>Грешка:</strong> Името „%s“ не започва с голяма буква."
+
+#: readable-names.php:232
+#, php-format
+msgid "<strong>Error:</strong> The name “%s” has to many capital letters."
+msgstr "<strong>Грешка:</strong> Името „%s“ съдържа повече от една голяма буква."
+
+#: readable-names.php:253
+#, php-format
+msgid "<strong>Error:</strong> The name “%1$s” does not contain required vowels: “%2$s”."
+msgstr "<strong>Грешка:</strong> Името „%1$s“ не съдържа нито една от задължителните гласни като: „%2$s“."
+
+#: readable-names.php:284
+#: readable-names.php:294
+#: readable-names.php:607
+msgid "Readable Names Settings"
+msgstr "Настройки за четими имена"
+
+#. #-#-#-#-#  plugin.pot (Readable Names 0.9.3)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: readable-names.php:285
+msgid "Readable Names"
+msgstr "Четими имена"
+
+#: readable-names.php:299
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: readable-names.php:310
+msgid "Allowed characters"
+msgstr "Позволени знаци"
+
+#: readable-names.php:311
+msgid "Small letters"
+msgstr "Малки букви"
+
+#: readable-names.php:312
+msgid "Capital letters"
+msgstr "Големи букви"
+
+#: readable-names.php:313
+msgid "Digits"
+msgstr "Цифри"
+
+#: readable-names.php:316
+msgid "Grammar"
+msgstr "Граматика"
+
+#: readable-names.php:317
+msgid "Minimum name length"
+msgstr "Минимална дължина на името"
+
+#: readable-names.php:318
+msgid "First character must be a capital letter"
+msgstr "Първата буква трябва да е голяма"
+
+#: readable-names.php:319
+msgid "One capital letter only"
+msgstr "Само една главна буква"
+
+#: readable-names.php:320
+msgid "Required vowels"
+msgstr "Задължителни гласни"
+
+#: readable-names.php:323
+msgid "Affected roles"
+msgstr "Засегнати роли"
+
+#: readable-names.php:324
+msgid "Visitor"
+msgstr "Посетител"
+
+#: readable-names.php:325
+msgid "User"
+msgstr "User"
+
+#: readable-names.php:328
+msgid "Appearance"
+msgstr "Appearance"
+
+#: readable-names.php:329
+msgid "Modify the comment form"
+msgstr "Промяна на формуляр за коментар"
+
+#: readable-names.php:333
+msgid "Whitespace is always allowed."
+msgstr "Празно място можете да поставите на всякъде."
+
+#: readable-names.php:370
+msgid "Depending on allowed characters."
+msgstr "Взависимост от позволените знаци."
+
+#: readable-names.php:381
+msgid "characters"
+msgstr "знаци"
+
+#: readable-names.php:416
+#, php-format
+msgid "Depending on <a href=\"%s\">discussion settings</a>."
+msgstr "Взависимост от <a href=\"%s\">настройки за коментарите</a>."
+
+#: readable-names.php:440
+#, php-format
+msgid "Depending on the <a href=\"%s\">current theme</a>."
+msgstr "Взависимост от <a href=\"%s\">текуща тема</a>."
+
+#: readable-names.php:451
+#, php-format
+msgid "“%1$s” instead of “%2$s”"
+msgstr "„%1$s“ вместо „%2$s“"
+
+#: readable-names.php:451
+#: readable-names.php:598
+msgid "Readable name"
+msgstr "Четимо име"
+
+#: readable-names.php:451
+msgid "Name"
+msgstr "Name"
+
+#: readable-names.php:578
+msgid "Settings"
+msgstr "Settings"
+
+#: readable-names.php:588
+msgid "Ask for help"
+msgstr "Помолете за помощ"
+
+#: readable-names.php:604
+msgid "Unreadable attempt"
+msgid_plural "Unreadable attempts"
+msgstr[0] "Нечетим опит"
+msgstr[1] "Нечетими опити"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/readable-names/"
+msgstr "http://wordpress.org/extend/plugins/readable-names/"
+
+#. Description of the plugin/theme
+msgid "Asks commenters to write their names in the language that your blog uses."
+msgstr "Гостите който коментират страницата, са помолени да напишат техните имена на езика, който се употрбява в блога."
+
+#. Author of the plugin/theme
+msgid "Anatol Broder"
+msgstr "Анатол Бродер"
+
+#. Author URI of the plugin/theme
+msgid "http://doktorbro.net/"
+msgstr "http://doktorbro.net/"
+
