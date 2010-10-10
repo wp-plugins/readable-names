@@ -531,8 +531,17 @@ class Readable_Names {
 			'unreadable_visitor_count' => 0
 		);
 		$locale = get_locale();
+		// Bulgarian
+		if ( 'bg_BG' == $locale ) {
+			$options[ 'allowed_small_letters' ] = 'абвгдежзийклмнопрстуфхцчшщъюя';
+			$options[ 'allowed_capital_letters' ] = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЪЮЯ';
+			$options[ 'minimum_name_length' ] = 2;
+			$options[ 'first_letter_capital' ] = true;
+			$options[ 'one_capital_letter_only' ] = true;
+			$options[ 'required_vowels' ] = 'аеиоуяАЕИОУЯ';
+		}
 		// Finnish
-		if ( 'fi' == $locale ) {
+		elseif ( 'fi' == $locale ) {
 			$options[ 'allowed_small_letters' ] = 'abcdefghijklmnopqrstuvwxyzåäö';
 			$options[ 'allowed_capital_letters' ] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
 			$options[ 'minimum_name_length' ] = 3;
