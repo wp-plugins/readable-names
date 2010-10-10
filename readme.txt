@@ -3,7 +3,7 @@ Contributors: doktorbro
 Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
 Tested up to: 3.0.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Asks commenters to write their names in the language that your blog uses.
 
@@ -19,6 +19,7 @@ Less spam is a welcome side effect on non-Latin alphabets.
 
 The plugin comes with a set of predefined standards for every translated language.
 
+* Bulgarian `bg_BG`
 * Finnish `fi` (by Christian Hellberg)
 * German `de_DE`
 * Hebrew `he_IL` (by [Yaron Shahrabani](https://edge.launchpad.net/~sh-yaron))
@@ -31,7 +32,7 @@ The plugin comes with a set of predefined standards for every translated languag
 = Technical Specifications =
 
 * very lightweight
-* fully UTF-8 compatible
+* fully localized
 * secure input validation
 * smooth upgrade procedure
 * no extra data in the database
@@ -103,6 +104,9 @@ Any *previous* settings should be *retained*. Some *new* options will be set to 
 Please, configure the new option “Required vowels” after the upgrade.
 
 == Changelog ==
+
+= 1.0.1 =
+* Add Bulgarian translation
 
 = 1.0 =
 * Display count of unreadable attempts on the dashboard
