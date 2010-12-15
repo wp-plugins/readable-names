@@ -165,9 +165,9 @@ msgstr "Попросить о помощи"
 #: readable-names.php:604
 msgid "Unreadable attempt"
 msgid_plural "Unreadable attempts"
-msgstr[0] "Нечитаемая попытка"
-msgstr[1] "Нечитаемые попытки"
-msgstr[2] "Нечитаемых попыток"
+msgstr[0] "нечитаемая попытка"
+msgstr[1] "нечитаемые попытки"
+msgstr[2] "нечитаемых попыток"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/readable-names/"

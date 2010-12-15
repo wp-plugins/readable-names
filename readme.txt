@@ -2,8 +2,8 @@
 Contributors: doktorbro
 Tags: comments, discussion, etiquette, grammar, language, readability, spam
 Requires at least: 3.0
-Tested up to: 3.0.1
-Stable tag: 1.0.1
+Tested up to: 3.1
+Stable tag: 1.0.2
 
 Asks commenters to write their names in the language that your blog uses.
 
@@ -99,11 +99,19 @@ Any *previous* settings should be *retained*. Some *new* options will be set to 
 
 == Upgrade Notice ==
 
+= 1.0.2 =
+
+This update makes the plugin compatible to WP 3.1.
+
 = 0.9 =
 
 Please, configure the new option “Required vowels” after the upgrade.
 
 == Changelog ==
+
+= 1.0.2 =
+* Use a static function in the uninstall hook (WP 3.1 compatible)
+* Change Russian translation
 
 = 1.0.1 =
 * Add Bulgarian translation

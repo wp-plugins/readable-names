@@ -3,7 +3,7 @@
 Plugin Name: Readable Names
 Plugin URI: http://wordpress.org/extend/plugins/readable-names/
 Description: Asks commenters to write their names in the language that your blog uses.
-Version: 1.0.1
+Version: 1.0.2
 Author: Anatol Broder
 Author URI: http://doktorbro.net/
 License: GPL2
@@ -17,13 +17,17 @@ if ( ! function_exists( 'is_admin' ) ) {
 	exit();
 }
 
+function readable_names_uninstall() {
+	delete_option( 'readable_names' );
+}
+
 class Readable_Names {
 
 	function Readable_Names() {
 		// activate, deactivate and uninstall
 		register_activation_hook( __FILE__, array( $this, 'plugin_activation' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'plugin_deactivation' ) );
-		register_uninstall_hook( __FILE__, array( $this, 'plugin_uninstall' ) );
+		register_uninstall_hook( __FILE__, 'readable_names_uninstall' );
 		
 		// load text domain
 		add_action( 'init', array( $this, 'plugin_init' ) );
@@ -67,10 +71,6 @@ class Readable_Names {
 		$options = get_option( 'readable_names' );
 		delete_option( 'readable_names' );
 		add_option( 'readable_names', $options, '', 'no' );
-	}
-	
-	function plugin_uninstall() {
-		delete_option( 'readable_names' );
 	}
 	
 	function options_upgrade( $options_old ) {
@@ -632,3 +632,4 @@ class Readable_Names {
 $GLOBALS[ 'Readable_Names' ] = new Readable_Names();
 
 ?>
+
